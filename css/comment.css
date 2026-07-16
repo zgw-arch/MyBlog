@@ -1,0 +1,160 @@
+/* ============================================
+   自定义评论区 — 暗色主题
+   数据走 Cusdis API，UI 完全自控
+   ============================================ */
+
+
+#custom-comment {border-radius: var(--radius-lg);
+  font-family: 'FangSong', '仿宋', serif;
+  color: #d4d4dc;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ----- 输入表单 -----  backdrop-filter: blur(10px) 就是毛玻璃，数字越大越模糊，rgba 最后一个数越大越不透。*/
+#custom-comment .cc-form {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 32px; padding: 16px;
+  background: rgba(22, 24, 29, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+#custom-comment .cc-form input,
+#custom-comment .cc-form textarea {
+  background: rgba(26, 29, 36, 0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 10px 14px;
+  color: #e0e0e6; font-size: 14px;
+  font-family: inherit; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#custom-comment .cc-form input:focus,
+#custom-comment .cc-form textarea:focus {
+  border-color: #5eead4;
+  box-shadow: 0 0 0 3px rgba(94,234,212,0.22);
+}
+#custom-comment .cc-form textarea { resize: vertical; min-height: 80px; }
+#custom-comment .cc-form input::placeholder,
+#custom-comment .cc-form textarea::placeholder {
+  color: rgba(255,255,255,0.15);
+}
+
+/* ----- 提交按钮 — 霓虹渐变流动 ----- */
+#custom-comment .cc-submit {
+  align-self: flex-end; position: relative; z-index: 1;
+  background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  background-size: 400%; color: #fff; border: none;
+  border-radius: 30px; padding: 10px 28px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(3,169,244,0.3);
+}
+#custom-comment .cc-submit:hover {
+  animation: neonFlow 6s linear infinite;
+  box-shadow: 0 0 20px rgba(3,169,244,0.5), 0 0 40px rgba(244,65,165,0.3);
+  transform: translateY(-2px);
+}
+@keyframes neonFlow {
+  0%   { background-position: 0%; }
+  100% { background-position: 400%; }
+}
+
+/* ----- 评论列表 ----- */
+#custom-comment .cc-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(26, 29, 36, 0.15);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+#custom-comment .cc-item:last-child { border-bottom: none; }
+
+/* 回复缩进 */
+#custom-comment .cc-replies {
+  margin-left: 48px; margin-top: 8px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(255,255,255,0.06);
+}
+
+/* 评论头部 */
+#custom-comment .cc-head {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 6px;
+}
+#custom-comment .cc-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+/*评论昵称*/
+#custom-comment .cc-name {
+  font-weight: 600; font-size: 23px; color: #e0e0e6;
+}
+
+/*评论时间*/
+#custom-comment .cc-time {
+  font-size: 21px; color: rgba(255,255,255,0.3);
+  margin-left: auto;
+}
+/*评论内容*/
+#custom-comment .cc-content {
+  font-size: 28px; line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 4px; word-break: break-word;
+}
+
+/* ----- reply 按钮 ---- */
+#custom-comment .cc-reply-btn {
+  background: transparent; color: rgba(255,255,255,0.35);
+  border: none; padding: 2px 4px; font-size: 12px;
+  cursor: pointer; transition: color 0.15s;
+}
+#custom-comment .cc-reply-btn:hover { color: #5eead4; }
+
+/* ----- 回复表单（默认隐藏）----- */
+#custom-comment .cc-reply-form {
+  display: none; flex-direction: column; gap: 8px;
+  margin-top: 8px; padding: 12px;
+  background: rgba(22, 24, 29, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+#custom-comment .cc-reply-form input,
+#custom-comment .cc-reply-form textarea {
+  background: rgba(26, 29, 36, 0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; padding: 8px 12px;
+  color: #e0e0e6; font-size: 13px;
+  font-family: inherit; outline: none;
+}
+#custom-comment .cc-reply-form textarea {
+  resize: vertical; min-height: 60px;
+}
+#custom-comment .cc-reply-form input:focus,
+#custom-comment .cc-reply-form textarea:focus {
+  border-color: #5eead4;
+  box-shadow: 0 0 0 2px rgba(94,234,212,0.1);
+}
+#custom-comment .cc-reply-actions {
+  display: flex; gap: 8px; justify-content: flex-end;
+}
+#custom-comment .cc-reply-cancel {
+  background: transparent; color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 4px 16px;
+  font-size: 12px; cursor: pointer; transition: all 0.15s;
+}
+#custom-comment .cc-reply-cancel:hover {
+  color: #e0e0e6; border-color: rgba(255,255,255,0.2);
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 768px) {
+  #custom-comment .cc-replies {
+    margin-left: 24px; padding-left: 12px;
+  }
+}

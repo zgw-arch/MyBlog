@@ -1227,40 +1227,4 @@ window.ARTICLES_DATA = [
 
 
 
-   },
-
-
-  /* {"id":12,"title":"Python 异步编程：async/await","date":"2025-04-20","category":"课程","tags":["Python","异步编程"],"thumbnail":"","excerpt":"从回调函数到 async/await，全面梳理 Python 异步编程演进历程。","content":"<h2>基础用法</h2><pre><code>async def fetch(url):\n    async with aiohttp.ClientSession() as s:\n        return await s.get(url)</code></pre>"},
-  {"id":13,"title":"STM32 Flash 自锁与解锁方法","date":"2025-03-12","category":"问题","tags":["STM32","嵌入式"],"thumbnail":"","excerpt":"记录 STM32 Flash 读保护导致芯片被锁的问题及解锁流程。","content":"<h2>原因</h2><p>错误配置选项字节中的读保护等级会导致芯片锁死。</p>"},
-  {"id":14,"title":"CH340 串口驱动与 brltty 冲突解决","date":"2025-02-28","category":"问题","tags":["CH340","Linux","驱动"],"thumbnail":"","excerpt":"解决 Linux 下 CH340 串口芯片与 brltty 服务冲突的问题。","content":"<h2>解决方案</h2><pre><code>sudo systemctl stop brltty\nsudo systemctl disable brltty</code></pre>"},
-  {"id":15,"title":"Markdown 写作规范与工具推荐","date":"2025-01-10","category":"碎碎念","tags":["Markdown","写作"],"thumbnail":"","excerpt":"总结 Markdown 格式规范与提高文档写作效率的实用工具。","content":"<h2>编辑器对比</h2><p>Typora 沉浸式写作，VS Code 混合编辑，Obsidian 知识库管理。</p>"},
-  {"id":16,"title":"PVE 虚拟化平台安装与配置","date":"2024-11-20","category":"记录","tags":["PVE","虚拟化"],"thumbnail":"","excerpt":"Proxmox VE 安装全过程及网卡直通配置实现高性能网络。","content":"<h2>PVE 简介</h2><p>Proxmox Virtual Environment 基于 Debian，同时支持 KVM 和 LXC。</p>"},
-  {"id":17,"title":"数据可视化：从 Matplotlib 到 D3.js","date":"2024-10-05","category":"课程","tags":["可视化","Python","JavaScript"],"thumbnail":"","excerpt":"对比 Matplotlib、Plotly、ECharts 和 D3.js 的优势与适用场景。","content":"<h2>Python 生态</h2><p>Matplotlib 是基石，Plotly 支持交互，Seaborn 擅长统计图表。</p>"},
-  {"id":18,"title":"GitHub Actions CI/CD 自动部署","date":"2024-09-18","category":"教程","tags":["CI/CD","GitHub Actions"],"thumbnail":"","excerpt":"配置 GitHub Actions 实现 Hexo 博客自动构建与部署。","content":"<h2>配置</h2><pre><code>on: push\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3</code></pre>"},
-  {"id":19,"title":"计算机视觉入门：图像处理到检测","date":"2024-08-22","category":"课程","tags":["计算机视觉","OpenCV"],"thumbnail":"","excerpt":"面向初学者的计算机视觉入门指南，从图像滤波到目标检测。","content":"<h2>图像基础</h2><p>OpenCV 提供了丰富的图像处理函数，彩色图 RGB 三通道。</p>"},
-  {"id":20,"title":"Shell 脚本编程实用技巧合集","date":"2024-07-30","category":"教程","tags":["Shell","Linux"],"thumbnail":"","excerpt":"整理日常开发中最常用的 Shell 脚本技巧，提高自动化效率。","content":"<h2>参数处理</h2><pre><code>while getopts \"f:o:v\" opt; do\n  case $opt in f) file=$OPTARG ;; esac\ndone</code></pre>"},
-  {"id":21,"title":"LaTeX 论文排版模板与技巧","date":"2024-06-15","category":"课程","tags":["LaTeX","论文"],"thumbnail":"","excerpt":"毕业论文 LaTeX 模板配置，含公式编号和参考文献管理。","content":"<h2>模板</h2><pre><code>\\\\documentclass{article}\n\\\\usepackage[UTF8]{ctex}</code></pre>"},
-  {"id":22,"title":"树莓派搭建家用 NAS 与媒体服务器","date":"2024-05-10","category":"记录","tags":["树莓派","NAS"],"thumbnail":"","excerpt":"用树莓派 4B 搭建低功耗 NAS，配置 Samba 和 Jellyfin。","content":"<h2>软件</h2><pre><code>sudo apt install samba\nsudo apt install jellyfin</code></pre>"},
-  {"id":23,"title":"深入理解 HTTPS：TLS 握手与证书","date":"2024-04-25","category":"教程","tags":["HTTPS","TLS","网络安全"],"thumbnail":"","excerpt":"用 Wireshark 抓包分析 TLS 1.3 握手全过程。","content":"<h2>TLS 1.3</h2><p>仅需 1-RTT 完成握手，Client Hello 携带密钥分享参数。</p>"},
-  {"id":24,"title":"MQTT 协议入门与 ESP32 实战","date":"2024-03-18","category":"记录","tags":["MQTT","ESP32","物联网"],"thumbnail":"","excerpt":"从 MQTT 原理讲起，ESP32 通过 MQTT 上传传感器数据。","content":"<h2>MQTT</h2><p>轻量级发布/订阅消息协议，QoS 分 0/1/2 三个等级。</p>"},
-
-<h4></h4>             "<img src='img/24.png'> "
- "<video src='img/1.mp4' controls style='max-width:100%;border-radius:8px;margin-bottom:16px;'></video>"
-
- "</p><div style='text-align:center;margin-top:24px;'><a href='download/YueXinMiao2.zip' download onclick='return confirm(\"确认下载 YueXinMiao2.zip？\")' style='display:inline-block;padding:10px 40px;background:#3b82f6;color:#fff;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:1px;'>点击下载项目源码</a></div>"
-
-
- {"id":11,"title":"此处填标题名 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "标题英文名<\p>","date":"2025-06-15","category":"教程","tags":["Hexo","建站"],"thumbnail":"img/16.webp","excerpt":"从安装 Node.js 开始，一步步搭建 Hexo 博客并自定义 Butterfly 主题。","content":"" +
-        "<h2>方式一：UU加速器</h2>打开uu加速器，搜素“学术”二字即可，选择“学术资源”进行加速，不过加速效果不是太好，断联风险较高。
-        <img src='img/5.png' alt='' style='max-width:100%;width:1000px;height:530px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'>" +
-        "<h2>方式二：Watt Toolkit加速器</h2>"
-  +"Watt Toolkit，旧名 Steam++，是面向 Windows 系统的开源免费多功能游戏辅助工具箱，原生适配 Win10/Win11 全版本，无需付费、无广告捆绑，源码公开可\n" +
-        "\n" +
-        "自查，安全可靠。 \n" +
-        "\n" +
-        "核心依托本地智能反代技术，一键优化 Steam 网络环境，彻底解决商店打不开、社区创意工坊加载失败、游戏更新缓慢、人机验证加载异常等常见问题，同步支持\n" +
-        "\n" +
-        " Epic、Origin、Uplay、GOG、GitHub、Twitch 等平台加速。"+
-        "<img src='img/7.png' alt='' style='max-width:100%;width:1000px;height:600px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'>"},
-*/];
+   }];

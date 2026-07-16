@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章详情 | Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+
+<header class="topbar" style="
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px; padding: 0 32px;
+  background: rgba(34,37,41,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.9rem;
+">
+  <span style="font-weight:800;letter-spacing:1px;text-shadow:0 14px 7px #94c8ff;color:#eeeef2;font-size:35px;">A Radish ～ Blog</span>
+  <nav style="display:flex;gap:24px;">
+    <a href="index.html" style="color:#5eead4;font-weight:600;text-decoration:none;">主页</a>
+    <a href="#" style="color:#a0a0ae;font-weight:500;text-decoration:none;">工具</a>
+  </nav>
+</header>
+
+<div style="height:52px;"></div>
+
+<div class="article-page">
+  <main class="article-main">
+    <nav class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span>
+      <a href="index.html">文章</a><span>/</span>
+      <span class="current" id="breadcrumb-cat">分类</span>
+    </nav>
+
+    <div id="article-loading" style="text-align:center;padding:80px 20px;color:var(--muted);">文章加载中...</div>
+
+    <article id="article-content" style="display:none;">
+      <header class="article-header">
+        <div class="article-meta-top">
+          <span class="article-date" id="art-date"></span>
+          <span class="article-cat" id="art-cat"></span>
+        </div>
+        <h1 class="article-title" id="art-title"></h1>
+        <div class="article-tags" id="art-tags"></div>
+      </header>
+      <div class="article-body-content" id="art-body"></div>
+      <footer class="article-footer">
+        <div class="article-nav">
+          <a id="prev-article" href="#">← 上一篇</a>
+          <a id="next-article" href="#">下一篇 →</a>
+        </div>
+      </footer>
+
+      <!-- 自定义评论区 -->
+      <div id="custom-comment" style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);">
+         <p style="font-size:2.6rem;font-weight:900;color:#e0e0e6;letter-spacing:0.05em;padding-left: 30px;padding-bottom:20px;">评论</p>
+        <div class="cc-form">
+          <input type="text" id="cc-nickname" placeholder="请输入昵称～" maxlength="35" />
+          <textarea id="cc-content" placeholder="随便写点什么吧..." maxlength="1001" rows="4"></textarea>
+          <button class="cc-submit" onclick="submitBlogComment(null)">发 布</button>
+        </div>
+        <div id="cc-list"><div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.35);font-size:13px;">加载中...</div></div>
+      </div>
+      <link rel="stylesheet" href="css/comment.css" />
+      <script src="js/comment.js"></script>
+      <!-- 自定义评论区 END -->
+    </article>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2022 – 2026 By <strong>一只萝卜</strong> · Powered by <strong>Hexo</strong> · Theme <strong>Custom</strong></p>
+</footer>
+
+<script src="data/articles.js"></script>
+<script src="js/article.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });
+});
+</script>
+</body>
+</html>

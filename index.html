@@ -359,7 +359,7 @@
   <p>&copy; 2025 – 2026 By <strong>a radish</strong>  <strong></strong>  <strong></strong></p>
 </footer>
 
-<script src="data/articles.js"></script>
+<script src="data/articles.js" defer></script>
 <!-- 站点信息 -->
 <script>
 (function(){
@@ -385,8 +385,11 @@
   }
 
   updateRuntime();
-  updateLast();
   setInterval(updateRuntime, 1000);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    updateLast();
+  });
 
   // 动态统计文章数、标签数、分类数 + 悬浮弹窗
   function updateStats() {
@@ -433,12 +436,14 @@
     catTip.innerHTML = catHtml;
     catsWrap.appendChild(catTip);
   }
-  updateStats();
+  document.addEventListener('DOMContentLoaded', function() {
+    updateStats();
+  });
 })();
 </script>
-<script src="js/card.js"></script>
+<script src="js/card.js" defer></script>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 
 <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
 <script src="rain.js" defer></script>

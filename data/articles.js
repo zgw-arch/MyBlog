@@ -3,7 +3,7 @@
 window.ARTICLES_DATA = [
   {"id":8,"title":"积分变换——拉普拉斯变换在积分运算与常微分方程中的应用  \n <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
         "Integral Transform — The Application of Laplace Transform in Integration and Ordinary Differential Equations<\p> " ,
-    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"img/11.JPG",
+    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"img/11.jpg",
     "excerpt":"详细介绍如何使用 BTRFS 文件系统配合 Timeshift 工具实现系统快照、备份和灾难恢复。","content":"<h2>一、积分运算</h2>\n" +
         "\n" +
         "<h3>1. 傅汝兰尼积分</h3>\n" +

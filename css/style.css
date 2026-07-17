@@ -33,7 +33,7 @@ img{max-width:100%;display:block}
 
 /* ── Header ── */
 .header{height:200vh;min-height:360px;max-height:800px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;background:var(--surface-3)}
-.header-bg{position:absolute;inset:0;background:url('../img/theme.webp') center/cover no-repeat;background-color:#2d3748;z-index:0}
+.header-bg{position:absolute;inset:0;background:url('../img/4.webp') center/cover no-repeat;background-color:#2d3748;z-index:0}
 /*header主题图片的玻璃遮罩*/
 .header-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.06) 0%,rgba(0,0,0,0.22) 100%)}
 

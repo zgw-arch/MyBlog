@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="技术宅拯救世界~~!">
 <meta name="theme-color" content="#ffffff">
+<link rel="preload" as="image" href="img/4.webp">
 <title>Blog</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="components/card.css">
-    <script src="js/avatar-rotate.js"></script>
+<link rel="stylesheet" href="components/card/card.css">
+<link rel="stylesheet" href="css/avatar-rotate.css">
     <style>
   @font-face {
     font-family: 'NewYork';
-    src: url('NewYork.otf') format('opentype');
+    src: url('NewYork.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -30,7 +30,7 @@
 
   @font-face {
     font-family: 'MonteCarlo';
-    src: url('MonteCarlo-Regular.ttf') format('truetype');
+    src: url('MonteCarlo-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -246,10 +246,11 @@
 
   <!-- 背景图：在下面 style 里填图片路径，如 style="background-image: url('img/header-bg.jpg')" -->
   <div class="header-bg" style="background-image: url('img/4.webp');clip-path: inset(0 0 30px 0);"></div>
-    
+
   <div class="header-content">
 
     <h1>A Radish ～ Blog</h1>
+
     <h2></h2>
   </div>
 </header>
@@ -275,13 +276,13 @@
     <div class="side-card profile">
       <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:inherit;"></div>
       <div style="position:relative;z-index:1;height:280px;">
-      <div class="avatar"><img src="img/avatar.jpg" alt=""></div>
+      <div class="avatar"><img src="img/avatar.jpg" alt="" loading="lazy" decoding="async"></div>
       <div class="profile-name"><svg width="16" height="18" viewBox="0 0 120 140" style="display:inline-block;vertical-align:middle;"><circle cx="60" cy="45" r="42" fill="currentColor"/><path d="M0 130 Q0 70 60 70 Q120 70 120 130" fill="currentColor"/></svg> a radish</div>
       <div class="profile-bio">个人博客</div>
       <div class="profile-stats">
-        <div class="profile-stat"><div class="profile-stat-num" id="stat-articles">25</div><div class="profile-stat-label"><img src="img/book_icon2.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;">文章</div></div>
-        <div class="profile-stat" style="position:relative;cursor:default;" id="stat-tags-wrap"><div class="profile-stat-num" id="stat-tags">18</div><div class="profile-stat-label"><img src="img/tyle.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;">标签</div></div>
-        <div class="profile-stat" style="position:relative;cursor:default;" id="stat-cats-wrap"><div class="profile-stat-num" id="stat-cats">5</div><div class="profile-stat-label"><img src="img/type.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;">分类</div></div>
+        <div class="profile-stat"><div class="profile-stat-num" id="stat-articles">25</div><div class="profile-stat-label"><img src="img/book_icon2.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;" loading="lazy" decoding="async">文章</div></div>
+        <div class="profile-stat" style="position:relative;cursor:default;" id="stat-tags-wrap"><div class="profile-stat-num" id="stat-tags">18</div><div class="profile-stat-label"><img src="img/tyle.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;" loading="lazy" decoding="async">标签</div></div>
+        <div class="profile-stat" style="position:relative;cursor:default;" id="stat-cats-wrap"><div class="profile-stat-num" id="stat-cats">5</div><div class="profile-stat-label"><img src="img/type.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px;" loading="lazy" decoding="async">分类</div></div>
 
       </div>
       </div>
@@ -292,7 +293,7 @@
 
 
     <div class="side-card" style="background-color:background:rgba(0,0,0,0.45);">
-      <h3 style="font-size:1.125rem;color:black;"><img src="img/book_icon1.png" alt="" style="width:27px;height:27px;vertical-align:middle;"> 最新文章</h3>
+      <h3 style="font-size:1.125rem;color:black;"><img src="img/book_icon1.png" alt="" style="width:27px;height:27px;vertical-align:middle;" loading="lazy" decoding="async"> 最新文章</h3>
       <div class="recent-list" id="recent-posts"><p style="font-size:0.8rem;color:var(--muted);">加载中...</p></div>
     </div>
 
@@ -440,26 +441,14 @@
 <script src="js/main.js"></script>
 
 <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
-<script src="rain.js"></script>
-<script src="fog.js"></script>
-<script src="js/typewriter.js"></script>
-<script src="js/meal.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  renderMathInElement(document.body, {
-    delimiters: [
-      {left: '$$', right: '$$', display: true},
-      {left: '$', right: '$', display: false}
-    ]
-  });
-});
-</script>
+<script src="rain.js" defer></script>
+<script src="fog.js" defer></script>
+<script src="js/typewriter.js" defer></script>
+<script src="js/meal.js" defer></script>
 
 <!-- tsparticles 粒子三角形3D旋转背景 -->
-<script src="js/tsparticles.min.js"></script>
-<script src="js/particles-bg.js"></script>
+<script src="js/tsparticles.min.js" defer></script>
+<script src="js/particles-bg.js" defer></script>
 
 <!-- ── 五子棋 ── -->
 <script>

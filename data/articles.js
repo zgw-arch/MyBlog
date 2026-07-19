@@ -1234,11 +1234,11 @@ window.ARTICLES_DATA = [
         "LabVIEW-based Butterworth Audio Filtering and Noise Reduction<\p>","date":"2026-01-15","category":"教程",
   "tags":["巴特沃斯","滤波","labview"],"thumbnail":"img/theme.webp",
   "excerpt":"","content":"" +
-        "<h2>1、这是未添加噪音的纯净音乐音频   ↓</h2><audio controls src=\"img/h264_video.wav\" preload=\"none\"></audio>"+
+        "<h2>1、这是未添加噪音的纯净音乐音频   ↓</h2><audio controls src=\"img/h264_video.mp3\" preload=\"none\"></audio>"+
       " <h3>这分别是此音频的时域信号和fft频域信号   ↓</h3><img src='img/不含噪音的纯净音乐.png'> "+"<img src='img/纯净音乐的fft.png'>"+
-  "<h2>2、这是添加噪音的待滤波音乐音频（此音频的杂音非常尖锐，下文简称“原始信号”）   ↓</h2><audio controls src=\"img/mix4.wav\" preload=\"none\"></audio>"+
+  "<h2>2、这是添加噪音的待滤波音乐音频（此音频的杂音非常尖锐，下文简称“原始信号”）   ↓</h2><audio controls src=\"img/mix4.mp3\" preload=\"none\"></audio>"+
      "<h3>这分别是此音频的时域信号和fft频域信号  ↓</h3><img src='img/原始信号.png'> "+"</h3><img src='img/原始信号的fft.png'>"+
-        "<h2>3、这是采用巴特沃斯滤波成功的音乐音频（杂音已经滤除，下文简称“滤波信号”）   ↓</h2><audio controls src=\"img/36-8000高通.wav\" preload=\"none\"></audio>"+
+        "<h2>3、这是采用巴特沃斯滤波成功的音乐音频（杂音已经滤除，下文简称“滤波信号”）   ↓</h2><audio controls src=\"img/36-8000高通.mp3\" preload=\"none\"></audio>"+
         "<h3>这分别是此音频的时域信号和fft频域信号  ↓</h3><img src='img/滤波信号.png'> "+"</h3><img src='img/滤波信号的fft.png'>"
   +"<h2>滤波过程</h2>"+"<h3>  对比原始信号与纯净信号的fft频谱，可以发现在1650hz~2000hz区间原始信号有明显的高峰，可以认定为噪声信号的能量集中在此频域区间内。</h3>"+
   "  <h3>通过观察，纯净音乐的低频（0~500Hz）能量峰值最高；中频段（500~2700Hz）能量平稳；2700Hz 能量陡降，此频率之后的区间为低频段，大概率是音源本身低通滤波、播放设备高频滚降，或是录音麦克风高频衰减。</h3>"

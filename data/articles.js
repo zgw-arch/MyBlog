@@ -1290,7 +1290,7 @@ window.ARTICLES_DATA = [
       "    print()\n" +
       "    input(\"按回车键退出...\")\n" +
       "</code></pre>"
-      +"打开labview巴特沃斯滤波程序，选中txt文件路径，对原信号进行滤波。找到滤波后的波形，右击导出Excel。转换Excel文件格式，将此文件另存为csv格式文件。最后使用下面的脚本把csv文件转化为滤波信号的wav音频文件"
+      +"<br><bt>打开labview巴特沃斯滤波程序，选中txt文件路径，对原信号进行滤波。找到滤波后的波形，右击导出Excel。转换Excel文件格式，将此文件另存为csv格式文件。最后使用下面的脚本把csv文件转化为滤波信号的wav音频文件."
 +
       "<pre><code class=\"python\">\"\"\"CSV → WAV (16-bit PCM，标准格式，所有播放器通用)\"\"\"\n" +
       "import csv, wave, struct, os\n" +

@@ -1242,7 +1242,84 @@ window.ARTICLES_DATA = [
         "<h3>这分别是此音频的时域信号和fft频域信号  ↓</h3><img src='img/滤波信号.png'> "+"</h3><img src='img/滤波信号的fft.png'>"
   +"<h2>滤波过程</h2>"+"<h3>  对比原始信号与纯净信号的fft频谱，可以发现在1650hz~2000hz区间原始信号有明显的高峰，可以认定为噪声信号的能量集中在此频域区间内。</h3>"+
   "  <h3>通过观察，纯净音乐的低频（0~500Hz）能量峰值最高；中频段（500~2700Hz）能量平稳；2700Hz 能量陡降，此频率之后的区间为低频段，大概率是音源本身低通滤波、播放设备高频滚降，或是录音麦克风高频衰减。</h3>"
-  +"<h3>可以直接选择高通滤波器，把中频段1650Hz之后的频段全部滤除，对音乐的整体音色与能量影响并不大。</h3>"+"<h2>Labview程序</h2>"+
+  +"<h3>可以直接选择高通滤波器，把中频段1650Hz之后的频段全部滤除，对音乐的整体音色与能量影响并不大。</h3>"+
+      "① 使用python脚本，将原始信号的wav文件转化为txt文件<br>"+
+    "<pre><code class=\"python\">\"\"\"WAV → TXT（标准 PCM WAV，16-bit）\"\"\"\n" +
+      "import sys, os, wave, struct\n" +
+      "\n" +
+      "WAV_PATH = r\"你的原始信号wav音频地址\"\n" +
+      "\n" +
+      "def wav_to_txt(wav_path):\n" +
+      "    if not os.path.exists(wav_path):\n" +
+      "        print(f\"!! 文件不存在: {wav_path}\")\n" +
+      "        return\n" +
+      "\n" +
+      "    with wave.open(wav_path, 'rb') as wf:\n" +
+      "        fs = wf.getframerate()\n" +
+      "        ch = wf.getnchannels()\n" +
+      "        sw = wf.getsampwidth()\n" +
+      "        n = wf.getnframes()\n" +
+      "        raw = wf.readframes(n)\n" +
+      "\n" +
+      "    if sw == 2:\n" +
+      "        samples = struct.unpack(f'&lt;{n * ch}h', raw)\n" +
+      "    elif sw == 1:\n" +
+      "        samples = struct.unpack(f'&lt;{n * ch}B', raw)\n" +
+      "        samples = [s - 128 for s in samples]\n" +
+      "    else:\n" +
+      "        print(f\"不支持的位深: {sw * 8} bit\")\n" +
+      "        return\n" +
+      "\n" +
+      "    left = [samples[i * ch] for i in range(n)]\n" +
+      "\n" +
+      "    base = os.path.splitext(os.path.basename(wav_path))[0]\n" +
+      "    txt_path = os.path.join(os.path.dirname(wav_path) or \".\", f\"{base}.txt\")\n" +
+      "    with open(txt_path, 'w') as f:\n" +
+      "        for v in left:\n" +
+      "            f.write(f\"{v}\\n\")\n" +
+      "\n" +
+      "    print(f\"采样率: {fs} Hz  声道: {ch}  样本: {len(left)}  时长: {len(left)/fs:.1f}s\")\n" +
+      "    print(f\"已保存: {txt_path}\")\n" +
+      "\n" +
+      "if __name__ == \"__main__\":\n" +
+      "    path = sys.argv[1] if len(sys.argv) >= 2 else WAV_PATH\n" +
+      "    if not os.path.exists(path):\n" +
+      "        print(\"WAV 文件不存在，拖文件或输入路径：\")\n" +
+      "        path = input(\"> \").strip().strip('\"')\n" +
+      "    wav_to_txt(path)\n" +
+      "    print()\n" +
+      "    input(\"按回车键退出...\")\n" +
+      "</code></pre>"
+      +"打开labview巴特沃斯滤波程序，选中txt文件路径，对原信号进行滤波。找到滤波后的波形，右击导出Excel。转换Excel文件格式，将此文件另存为csv格式文件。最后使用下面的脚本把csv文件转化为滤波信号的wav音频文件"
++
+      "<pre><code class=\"python\">\"\"\"CSV → WAV (16-bit PCM，标准格式，所有播放器通用)\"\"\"\n" +
+      "import csv, wave, struct, os\n" +
+      "\n" +
+      "csv_path = r\"你的csv文件地址\"\n" +
+      "wav_path = r\"D:\\labview工程\\滤波文件夹\\滤波信号.wav\"\n" +
+      "fs = 48000\n" +
+      "\n" +
+      "with open(csv_path, 'r') as f:\n" +
+      "    reader = csv.reader(f)\n" +
+      "    next(reader)\n" +
+      "    samples = [float(row[1]) for row in reader if len(row) >= 2]\n" +
+      "\n" +
+      "# 归一化\n" +
+      "m = max(abs(s) for s in samples) or 1\n" +
+      "i16 = [max(-32768, min(32767, int(round(s * 32767.0 / m)))) for s in samples]\n" +
+      "\n" +
+      "with wave.open(wav_path, 'w') as wf:\n" +
+      "    wf.setnchannels(1)\n" +
+      "    wf.setsampwidth(2)\n" +
+      "    wf.setframerate(fs)\n" +
+      "    wf.writeframes(struct.pack(f'&lt;{len(i16)}h', *i16))\n" +
+      "\n" +
+      "print(f\"采样率: {fs} Hz  样本数: {len(i16)}  时长: {len(i16)/fs:.1f}s\")\n" +
+      "print(f\"WAV 文件: {wav_path}\")\n" +
+      "</code></pre>"
+
+
+      +"<h2>Labview程序</h2>"+
       "        <img src='img/1784444612887.png'> "+  "<video src='img/151141.mp4' controls style='max-width:100%;border-radius:8px;margin-bottom:16px;'></video>"
         },
 

@@ -1223,11 +1223,28 @@ window.ARTICLES_DATA = [
      +"此项目仅供参考，若改变蓝牙型号或者发送的数据包格式，VISA控件的属性与字符串处理过程必须对应修改...........以下是执行过程的高亮显示"+
          "<video src='img/1.mp4' controls style='max-width:100%;border-radius:8px;margin-bottom:16px;'></video>"
 
-
-
-
-
    },
+
+
+
+
+
+
+{"id":12,"title":"基于labview的巴特沃斯音频滤波降噪系统<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+        "LabVIEW-based Butterworth Audio Filtering and Noise Reduction<\p>","date":"2026-01-15","category":"教程",
+  "tags":["巴特沃斯","滤波","labview"],"thumbnail":"img/theme.webp",
+  "excerpt":"","content":"" +
+        "<h2>1、这是未添加噪音的纯净音乐音频   ↓</h2><audio controls src=\"img/h264_video.wav\" preload=\"none\"></audio>"+
+      " <h3>这分别是此音频的时域信号和fft频域信号   ↓</h3><img src='img/不含噪音的纯净音乐.png'> "+"<img src='img/纯净音乐的fft.png'>"+
+  "<h2>2、这是添加噪音的待滤波音乐音频（此音频的杂音非常尖锐，下文简称“原始信号”）   ↓</h2><audio controls src=\"img/mix4.wav\" preload=\"none\"></audio>"+
+     "<h3>这分别是此音频的时域信号和fft频域信号  ↓</h3><img src='img/原始信号.png'> "+"</h3><img src='img/原始信号的fft.png'>"+
+        "<h2>3、这是采用巴特沃斯滤波成功的音乐音频（杂音已经滤除，下文简称“滤波信号”）   ↓</h2><audio controls src=\"img/36-8000高通.wav\" preload=\"none\"></audio>"+
+        "<h3>这分别是此音频的时域信号和fft频域信号  ↓</h3><img src='img/滤波信号.png'> "+"</h3><img src='img/滤波信号的fft.png'>"
+  +"<h2>滤波过程</h2>"+"<h3>  对比原始信号与纯净信号的fft频谱，可以发现在1650hz~2000hz区间原始信号有明显的高峰，可以认定为噪声信号的能量集中在此频域区间内。</h3>"+
+  "  <h3>通过观察，纯净音乐的低频（0~500Hz）能量峰值最高；中频段（500~2700Hz）能量平稳；2700Hz 能量陡降，此频率之后的区间为低频段，大概率是音源本身低通滤波、播放设备高频滚降，或是录音麦克风高频衰减。</h3>"
+  +"<h3>可以直接选择高通滤波器，把中频段1650Hz之后的频段全部滤除，对音乐的整体音色与能量影响并不大。</h3>"+"<h2>Labview程序</h2>"+
+      "        <img src='img/1784444612887.png'> "+  "<video src='img/151141.mp4' controls style='max-width:100%;border-radius:8px;margin-bottom:16px;'></video>"
+        },
 
 
   /* {"id":12,"title":"Python 异步编程：async/await","date":"2025-04-20","category":"课程","tags":["Python","异步编程"],"thumbnail":"","excerpt":"从回调函数到 async/await，全面梳理 Python 异步编程演进历程。","content":"<h2>基础用法</h2><pre><code>async def fetch(url):\n    async with aiohttp.ClientSession() as s:\n        return await s.get(url)</code></pre>"},
@@ -1262,5 +1279,15 @@ window.ARTICLES_DATA = [
         "核心依托本地智能反代技术，一键优化 Steam 网络环境，彻底解决商店打不开、社区创意工坊加载失败、游戏更新缓慢、人机验证加载异常等常见问题，同步支持\n" +
         "\n" +
         " Epic、Origin、Uplay、GOG、GitHub、Twitch 等平台加速。"+
-        "<img src='img/7.webp' alt='' style='max-width:100%;width:1000px;height:600px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'>"},
+        "<img src='img/7.webp' alt='' style='max-width:100%;width:1000px;height:600px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'>"
+        },
+
+
+
+
+        {"id":12,"title":"此处填标题名 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+        "标题英文名<\p>","date":"2025-06-15","category":"教程","tags":["Hexo","建站"],"thumbnail":"img/16.webp",
+  "excerpt":"从安装 Node.js 开始，一步步搭建 Hexo 博客并自定义 Butterfly 主题。","content":"" +
+        ""
+        },
 */];

@@ -245,7 +245,7 @@
 
 
   <!-- 背景图：在下面 style 里填图片路径，如 style="background-image: url('img/header-bg.jpg')" -->
-  <div class="header-bg" style="background-image: url('img/4.webp');clip-path: inset(0 0 30px 0);"></div>
+  <div class="header-bg" style="background-image: url('img/4.webp');"></div>
 
   <div class="header-content">
 
@@ -303,6 +303,9 @@
       <div class="site-info-row">建站日期：<span id="siteDate">2025-07-02</span></div>
       <div class="site-info-row">运行时间：<span id="siteRuntime"></span></div>
       <div class="site-info-row">最后更新：<span id="siteLastUpdate"></span></div>
+      <div class="site-info-row">文章总阅读量：<span id="articleTotalViews"></span> 次</div>
+      <div class="site-info-row">全站总访问量：<span id="busuanzi_value_site_pv"></span> 次</div>
+      <div class="site-info-row">本站访客数：<span id="busuanzi_value_site_uv"></span> 人</div>
     </div>
 
     <!-- 随机美食食谱 -->
@@ -328,6 +331,7 @@
 
 
   </aside>
+  <span id="busuanzi_value_page_pv" style="display:none;"></span>
 </div>
 
 
@@ -355,10 +359,27 @@
 
 
 
+
 <footer class="footer" style="text-align:center;padding:24px 0;margin-top:30px;clear:both;">
   <p>&copy; 2025 – 2026 By <strong>a radish</strong>  <strong></strong>  <strong></strong></p>
 </footer>
-
+<script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script>
+<script>
+(function(){
+  var timer = setInterval(function(){
+    var siteEl = document.getElementById('busuanzi_value_site_pv');
+    var pageEl = document.getElementById('busuanzi_value_page_pv');
+    var articleEl = document.getElementById('articleTotalViews');
+    if (!siteEl || !pageEl || !articleEl) return;
+    var sitePv = parseInt(siteEl.textContent);
+    var pagePv = parseInt(pageEl.textContent);
+    if (isNaN(sitePv) || isNaN(pagePv)) return;
+    if (sitePv === 0 && pagePv === 0) return;
+    articleEl.textContent = Math.max(0, sitePv - pagePv);
+    clearInterval(timer);
+  }, 500);
+})();
+</script>
 <script src="data/articles.js" defer></script>
 <!-- 站点信息 -->
 <script>
@@ -447,7 +468,6 @@
 
 <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
 <script src="rain.js" defer></script>
-
 <script src="js/typewriter.js" defer></script>
 <script src="js/meal.js" defer></script>
 

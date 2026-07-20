@@ -374,7 +374,6 @@
     var sitePv = parseInt(siteEl.textContent);
     var pagePv = parseInt(pageEl.textContent);
     if (isNaN(sitePv) || isNaN(pagePv)) return;
-    if (sitePv === 0 && pagePv === 0) return;
     articleEl.textContent = Math.max(0, sitePv - pagePv);
     clearInterval(timer);
   }, 500);

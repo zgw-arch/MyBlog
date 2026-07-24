@@ -153,9 +153,10 @@ img{max-width:100%;display:block}
 
   /* ── 头部大图 ── */
   .header {
-    height: 50vh;
-    min-height: 280px;
-    max-height: 500px;
+    height: 300px;
+    min-height: 0;
+    max-height: none;
+    contain: paint;
   }
   .header h1 { font-size: 2rem; }
   .header h2 { font-size: 0.9rem; }

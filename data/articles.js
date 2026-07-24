@@ -674,7 +674,7 @@ window.ARTICLES_DATA = [
 
 
   {"id":6,"title":"伯努利数——三角函数的级数展开式推导\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"img/13.jpg","thumbnailPosition": "50% -180px","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
+        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"img/13.jpg","thumbnailPosition": "50% -240px","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
         "<h3>1. 泰勒级数基础定义</h3>\n" +
         "<p>函数 $f(x)$ 在 $x=x_0$ 处带皮亚诺余项的 $n$ 阶泰勒公式：</p>\n" +
         "<p>$$\n" +

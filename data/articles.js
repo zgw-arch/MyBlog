@@ -1136,40 +1136,90 @@ window.ARTICLES_DATA = [
 
 
 
-   {"id":11,"title":"基于Labview的HC-05蓝牙串口无线实时数据采集简易系统的上位机设计<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:40px;\">" +
-        "Design of a PC Application for a Simple Labview-Based HC-05 Bluetooth Serial Wireless Real-Time Data Collection System<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"img/23.jpg" +
+   {"id":11,"title":"基于Labview的HC05蓝牙串口实时数据采集系统的上位机<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:40px;\">" +
+        "The upper computer of HC05 Bluetooth serial port real-time data acquisition system based on Labview<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"img/23.jpg" +
          "","excerpt":"","content":"LABVIEW下载参考http://ruanjian.seosichuan.cn/ ，本项目采用2024（64bit）版本" +
-        "<h2>前置项目：通过单片机集成DHT11与光敏传感器实现了温度T、湿度H、光照强度L的周期性数据采集，并配置了HC-05无线蓝牙透传模块</h2>"
-   +"<h3>labview控件、函数清单</h3>"
-   +"$$\n" +
-         "\\begin{array}{|c|c|c|c|c|}\n" +
-         "\\hline\n" +
-         "分类 & 中文名称 & 英文名称 & LabVIEW 库路径 & 核心用途 \\\\\n" +
-         "\\hline\n" +
-         "\\hline\n" +
-         "\\text{前面板控件} & \\text{VISA 资源名称下拉框} & \\text{VISA Resource Name} & \\text{I/O} \\to \\text{VISA Resource Name} & \\text{选择 HC-05 虚拟串口，标准格式ASRLx::INSTR} \\\\\n" +
-         "\\hline\n" +
-         "\\text{前面板控件} & \\text{字符串显示控件} & \\text{String Indicator} & \\text{String} \\to \\text{String Indicator} & \\text{实时可视化展示蓝牙串口接收数据} \\\\\n" +
-         "\\hline\n" +
-         "\\text{前面板控件} & \\text{停止布尔按钮} & \\text{Stop Button} & \\text{Boolean} \\to \\text{Stop Button} & \\text{控制 While 循环终止，手动停止采集程序} \\\\\n" +
-         "\\hline\n" +
-         "\\hline\n" +
-         "\\text{框图核心函数} & \\text{VISA 打开} & \\text{VISA Open} & \\text{Instrument I/O} \\to \\text{Serial} \\to \\text{VISA Open} & \\text{建立串口通信会话，生成合法 VISA 句柄} \\\\\n" +
-         "\\hline\n" +
-         "\\text{框图核心函数} & \\text{VISA 配置串口} & \\text{VISA Configure Serial Port} & \\text{Instrument I/O} \\to \\text{Serial} \\to \\text{VISA Configure Serial Port} & \\text{配置波特率、超时等串口通信参数} \\\\\n" +
-         "\\hline\n" +
-         "\\text{框图核心函数} & \\text{While 循环结构} & \\text{While Loop} & \\text{Structures} \\to \\text{While Loop} & \\text{持续循环轮询串口，实现数据实时刷新} \\\\\n" +
-         "\\hline\n" +
-         "\\text{框图核心函数} & \\text{VISA 读取} & \\text{VISA Read} & \\text{Instrument I/O} \\to \\text{Serial} \\to \\text{VISA Read} & \\text{读取蓝牙虚拟 COM 缓冲区的下位机数据} \\\\\n" +
-         "\\hline\n" +
-         "\\text{框图核心函数} & \\text{VISA 关闭} & \\text{VISA Close} & \\text{Instrument I/O} \\to \\text{Serial} \\to \\text{VISA Close} & \\text{程序结束释放 COM 端口，避免端口占用锁死} \\\\\n" +
-         "\\hline\n" +
-         "\\hline\n" +
-         "\\text{辅助优化函数} & \\text{简易错误处理器} & \\text{Simple Error Handler} & \\text{Dialog \\& User Interface} \\to \\text{Simple Error Handler} & \\text{捕获全链路串口故障，弹窗输出报错信息} \\\\\n" +
-         "\\hline\n" +
-         "\\hline\n" +
-         "\\end{array}\n" +
-         "$$\n"+"<h3>蓝牙部署</h3>\n"+"<img src='img/24.png'> "+
+        "<h2>前置项目</h2><h3>通过单片机集成DHT11与光敏传感器实现了温度T、湿度H、光照强度L的周期性数据采集，并配置了HC-05无线蓝牙透传模块</h3>"
+         +"&ensp;&ensp;简易PCB二层板(STM32F103C8T6最小系统板 + 2.54-1*4p母 + 2.54-1*6p母 + DHT11 + HC-05 + LED + OLED + 光敏传感器 + 蜂鸣器 + 嘉立创EDA软件自动布线)<br>"
+         +"<img src = 'img/PCB_compressed.png' <figcaption>&nbsp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;PCB顶层板（红色走线）&& PCB底层板（蓝色走线）</figcaption>"+
+"<img src = 'img/composition_compressed.jpg' width=45%;<figcaption>&nbsp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;实物图（嘉立创PCB打样 + 锡焊）</figcaption>"
+
+        +
+
+         "<h2>LabVIEW蓝牙串口程序组件清单</h2>\n" +
+         "<table border=\"1\" width=\"100%\">\n" +
+         "  <tr>\n" +
+         "    <th>组件名称</th>\n" +
+         "    <th>分类</th>\n" +
+         "    <th>英文名称</th>\n" +
+         "    <th>LABVIEW库路径</th>\n" +
+         "    <th>核心用途</th>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>VISA 资源名称下拉框</td>\n" +
+         "    <td>前面板控件</td>\n" +
+         "    <td>VISA Resource Name</td>\n" +
+         "    <td>I/O → VISA Resource Name</td>\n" +
+         "    <td>选择 HC-05 虚拟串口，标准格式ASRLx::INSTR</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>字符串显示控件</td>\n" +
+         "    <td>前面板控件</td>\n" +
+         "    <td>String Indicator</td>\n" +
+         "    <td>String → String Indicator</td>\n" +
+         "    <td>实时可视化展示蓝牙串口接收数据</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>停止布尔按钮</td>\n" +
+         "    <td>前面板控件</td>\n" +
+         "    <td>Stop Button</td>\n" +
+         "    <td>Boolean → Stop Button</td>\n" +
+         "    <td>控制 While 循环终止，手动停止采集程序</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>VISA 打开</td>\n" +
+         "    <td>框图核心函数</td>\n" +
+         "    <td>VISA Open</td>\n" +
+         "    <td>Instrument I/O → Serial → VISA Open</td>\n" +
+         "    <td>建立串口通信会话，生成合法 VISA 句柄</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>VISA 配置串口</td>\n" +
+         "    <td>框图核心函数</td>\n" +
+         "    <td>VISA Configure Serial Port</td>\n" +
+         "    <td>Instrument I/O → Serial → VISA Configure Serial Port</td>\n" +
+         "    <td>配置波特率、超时等串口通信参数</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>While 循环结构</td>\n" +
+         "    <td>框图核心函数</td>\n" +
+         "    <td>While Loop</td>\n" +
+         "    <td>Structures → While Loop</td>\n" +
+         "    <td>持续循环轮询串口，实现数据实时刷新</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>VISA 读取</td>\n" +
+         "    <td>框图核心函数</td>\n" +
+         "    <td>VISA Read</td>\n" +
+         "    <td>Instrument I/O → Serial → VISA Read</td>\n" +
+         "    <td>读取蓝牙虚拟 COM 缓冲区的下位机数据</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>VISA 关闭</td>\n" +
+         "    <td>框图核心函数</td>\n" +
+         "    <td>VISA Close</td>\n" +
+         "    <td>Instrument I/O → Serial → VISA Close</td>\n" +
+         "    <td>程序结束释放 COM 端口，避免端口占用锁死</td>\n" +
+         "  </tr>\n" +
+         "  <tr>\n" +
+         "    <td>简易错误处理器</td>\n" +
+         "    <td>辅助优化函数</td>\n" +
+         "    <td>Simple Error Handler</td>\n" +
+         "    <td>Dialog & User Interface → Simple Error Handler</td>\n" +
+         "    <td>捕获全链路串口故障，弹窗输出报错信息</td>\n" +
+         "  </tr>\n" +
+         "</table>"+"<h3>移动端蓝牙部署：“蓝牙调试器”APP输出字符串：T:35 H:60 L:27% </h3>"+
+         "<h2>PC端蓝牙部署</h2>\n"+"<img src='img/24.png'> "+
    "PC端打开蓝牙连接HC-05，配对密码为1234,\n"+""+"\n打开NI MAX，查看蓝牙连接端口为COM3"+
          "<img src='img/19.png' alt='' style='max-width:100%;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'>"
    +"VISA 资源名称模块的下拉框中选择COM3"+"<h2>HC-05 标准串口配置参数表</h2>"+"$$\n" +
@@ -1191,36 +1241,38 @@ window.ARTICLES_DATA = [
          "\\text{串口超时 Timeout} & 10000\\ \\text{ms} & \\text{项目设置 10 秒超时，避免读取卡死} \\\\\n" +
          "\\hline\n" +
          "\\end{array}\n" +
-         "$$\n"+"根据表格，在VISA Configure Serial Port配置参数"+"&&\n"+"<h2>VISA Read 模块的字节总数连接常量100</h2>"+"$$\n" +
+         "$$\n"
+
+         +"根据表格，在VISA Configure Serial Port配置参数"+"\n"+"<h2>VISA Read 模块的字节总数连接常量100</h2>"+"$$\n" +
          "\\text{VISA Read 字节总数(Byte Count)}：单次串口读取允许获取的最大字节上限，本项目固定常量值为100。\n" +
          "$$\n"+"<h2>Labview程序</h2>"+ "<img src='img/20.png'> "+"<h2>输出控件结果</h2>"+"<img src='img/21.png'> "+"<h2>while循环</h2>"+
          "HC-05的数据是周期性采集的，加入while循环函数，对输出控件的值进行周期性更新"+"<img src='img/22.png'> "
          +"<h2>波形图展示的前置条件</h2>" +
-        "<h3>单片机的蓝牙程序中，数据包的格式是字符串<code>T:xx H:xx L:xx%</code>，其中xx表示传感器采集的数据</h3>\n" +
-         "<h4>字符串不可直接接入“波形图表”控件，必须先转换成数字</h4>\n" +
-         "<h4>核心控件：搜索/拆分字符串、截取字符串、十进制数字符串至数值转换、波形图表</h4>\n" +
-         "<h4>1、找到“搜索/拆分字符串”控件，将VISA Read读取的原始字符串数据接入到此控件的“字符串”输入端口</h4>\n" +
-         "<h4>2、“搜索字符串”端口添加常量<code>:</code>，为英文格式的冒号。此控件有两个输出端口，一个是“匹配之前的子字符串”；另一个是“匹配+匹配之后的字符串”</h4>\n" +
-         "<h4>3、已知原始字符串为<code>T:xx H:xx L:xx%</code></h4>\n" +
-         "<h4>完成上述步骤之后，“匹配之前的子字符串”端口输出字符串<code>T</code>，“匹配+匹配之后的字符串”端口输出字符串<code>:xx H:xx L:xx%</code></h4>\n" +
-         "<h4>4、我们目前先获得温度T的数据，因此需要对<code>:xx H:xx L:xx%</code>字符串再进行一次搜索与拆分动作。4、将匹配+匹配之后的字符串端口接入下一个“搜索/拆分字符串”控件，第二个控件的“搜索字符串”端口添加常量<code> </code>，没错，常量就是空格。</h4>\n" +
-         "<h4>6、为什么？</h4>" +
-         "首先我们当前已经有<code>:xx H:xx L:xx%</code>，其中<code>:xx</code>后面有一个空格，控件检索到此空格之后，其“匹配之前的子字符串”端口输出这个空格之前的内容，即<code>:xx</code>，于是我们得到了字符T和空格之间的内容，但是冒号怎么消除呢？\n" +
+        "<h3>&ensp;&ensp;单片机的蓝牙程序中，数据包的格式是字符串<code>T:xx H:xx L:xx%</code>，其中xx表示传感器采集的数据</h3>\n" +
+         "<h4>&ensp;&ensp;字符串不可直接接入“波形图表”控件，必须先转换成数字</h4>\n" +
+         "<h4>&ensp;&ensp;核心控件：搜索/拆分字符串、截取字符串、十进制数字符串至数值转换、波形图表</h4>\n" +
+         "<h4>&ensp;&ensp;1、找到“搜索/拆分字符串”控件，将VISA Read读取的原始字符串数据接入到此控件的“字符串”输入端口</h4>\n" +
+         "<h4>&ensp;&ensp;2、“搜索字符串”端口添加常量<code>:</code>，为英文格式的冒号。此控件有两个输出端口，一个是“匹配之前的子字符串”；另一个是“匹配+匹配之后的字符串”</h4>\n" +
+         "<h4>&ensp;&ensp;3、已知原始字符串为<code>T:xx H:xx L:xx%</code></h4>\n" +
+         "<h4>&ensp;&ensp;完成上述步骤之后，“匹配之前的子字符串”端口输出字符串<code>T</code>，“匹配+匹配之后的字符串”端口输出字符串<code>:xx H:xx L:xx%</code></h4>\n" +
+         "<h4>&ensp;&ensp;4、我们目前先获得温度T的数据，因此需要对<code>:xx H:xx L:xx%</code>字符串再进行一次搜索与拆分动作。4、将匹配+匹配之后的字符串端口接入下一个“搜索/拆分字符串”控件，第二个控件的“搜索字符串”端口添加常量<code> </code>，没错，常量就是空格。</h4>\n" +
+         "<h4>&ensp;&ensp;6、为什么？</h4>" +
+         "&ensp;&ensp;首先我们当前已经有<code>:xx H:xx L:xx%</code>，其中<code>:xx</code>后面有一个空格，控件检索到此空格之后，其“匹配之前的子字符串”端口输出这个空格之前的内容，即<code>:xx</code>，于是我们得到了字符T和空格之间的内容，但是冒号怎么消除呢？\n" +
          "</h4>\n" +
-         "<h4>7、这里需要用到“截取字符串”这个控件</h4>\n" +
-         "<h4>把所得的<code>:xx</code>接入“截取字符串”的“字符串”输入端口，“偏移量”设置为<code>1</code>，则截取到冒号之后的字符串，即温度传感器采集到的数据<code>xx</code></h4>\n" +
+         "<h4>&ensp;&ensp;7、这里需要用到“截取字符串”这个控件</h4>\n" +
+         "<h4>&ensp;&ensp;把所得的<code>:xx</code>接入“截取字符串”的“字符串”输入端口，“偏移量”设置为<code>1</code>，则截取到冒号之后的字符串，即温度传感器采集到的数据<code>xx</code></h4>\n" +
          "<img src='img/25.png'>\n" +
-         "<h4>得到了<code>xx</code>这个字符串,需要接入“十进制数字符串至数值转换”的“字符串输入端口”，将字符串转换为纯数字，最后此控件的“数字“端口可接入波形图表了</h4>\n" +
-         "<h4>注意：若直接使用“截取字符串”模块可以直接消去“T:”部分，此处为了演示稍显复杂。“搜索 / 拆分字符串” 控件的 “偏移量” 代表检索的起始下标。\n" +
-         "例：字符串 S = \"hello world\"，偏移量设为 0、搜索字符 l 时，程序从 S \\[0\\] 字符 h 向右遍历，匹配到第一个 l。\n" +
+         "<h4>&ensp;&ensp;得到了<code>xx</code>这个字符串,需要接入“十进制数字符串至数值转换”的“字符串输入端口”，将字符串转换为纯数字，最后此控件的“数字“端口可接入波形图表了</h4>\n" +
+         "<h4>&ensp;&ensp;注意：若直接使用“截取字符串”模块可以直接消去“T:”部分，此处为了演示稍显复杂。“搜索 / 拆分字符串” 控件的 “偏移量” 代表检索的起始下标。\n" +
+         "&ensp;&ensp;<br>&ensp;&ensp;例：字符串 S = \"hello world\"，偏移量设为 0、搜索字符 l 时，程序从 S \\[0\\] 字符 h 向右遍历，匹配到第一个 l。\n" +
          "该字符串内一共存在三处 l：下标 2、下标 3、下标 9。若想要只检索到第三个 l，需要把偏移量设置为 4；程序从 S \\[4\\] 字符 o 开始向右检索，前两个 l 都在起始位置左侧，不会被匹配，仅能找到下标 9 的第三个 l。\n" +
          "该检索方式可用于蓝牙上传的湿度、光照强度报文截取，完成字符串到数值的转换。</h4>"+
-         "<h3>由于短时间内室温变化不大，湿度值能够通过人哈气较大幅度改变，因此这里展示湿度值的波形图：</h3> <img src='img/26.png'> </h2>"+"<h2>BUG修复</h2>"+
-         "<h3>VISA 读取写死 100 字节，蓝牙持续发送数据，串口输入缓冲区残留数据不断堆积溢出；程序循环读取后没有清理剩余杂字节，最终导致读取超时错误</h3>"+
-         "解决方案：采用2 帧平铺顺序结构，把VISA关闭模块放在第二帧，其余均在第一帧。前面板新增布尔stop按钮，并放置在while循环中。放置事件结构模块，初始事件默认为超时。事件结构模块新增事件，关联stop停止按钮，事件为“值改变”。 <img src='img/27.png'> " +
-         "把while循环放置在“超时”事件中，并在”事件结构“左上角设置超时时间常量20"+"VISA打开和读取后分别接入”VISA清空I/O缓冲区“模块"+ "<img src='img/28.png'> "+ "<img src='img/29.png'> "
+         "<h3>&ensp;&ensp;由于短时间内室温变化不大，湿度值能够通过人哈气较大幅度改变，因此这里展示湿度值的波形图：</h3> <img src='img/26.png'> </h2>"+"<h2>BUG修复</h2>"+
+         "<h3>&ensp;&ensp;VISA 读取写死 100 字节，蓝牙持续发送数据，串口输入缓冲区残留数据不断堆积溢出；程序循环读取后没有清理剩余杂字节，最终导致读取超时错误</h3>"+
+         "&ensp;&ensp;解决方案：采用2 帧平铺顺序结构，把VISA关闭模块放在第二帧，其余均在第一帧。前面板新增布尔stop按钮，并放置在while循环中。放置事件结构模块，初始事件默认为超时。事件结构模块新增事件，关联stop停止按钮，事件为“值改变”。 <img src='img/27.png'> " +
+         "&ensp;&ensp;把while循环放置在“超时”事件中，并在”事件结构“左上角设置超时时间常量20"+"VISA打开和读取后分别接入”VISA清空I/O缓冲区“模块"+ "<img src='img/28.png'> "+ "<img src='img/29.png'> "
      +"</p><div style='text-align:center;margin-top:24px;'><a href='download/HC-05 蓝牙.zip' download onclick='return confirm(\"确认下载 HC-05 蓝牙.zip？\")' style='display:inline-block;padding:10px 40px;background:#3b82f6;color:#fff;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:1px;'>点击下载项目源码</a></div>"
-     +"此项目仅供参考，若改变蓝牙型号或者发送的数据包格式，VISA控件的属性与字符串处理过程必须对应修改...........以下是执行过程的高亮显示"+
+     +"&ensp;&ensp;此项目仅供参考，若改变蓝牙型号或者发送的数据包格式，VISA控件的属性与字符串处理过程必须对应修改...........以下是执行过程的高亮显示"+
          "<video src='img/1.mp4' controls style='max-width:100%;border-radius:8px;margin-bottom:16px;'></video>"
 
    },
@@ -1402,8 +1454,8 @@ window.ARTICLES_DATA = [
            "在发送端“Plaintxt”模块输入明文字符串的<code>错误</code>格式：<code>uint8('You don't need to look up to others, for you yourself are a spectacle. ')</code>"+
            "<p> 英文缩写里的 ' 和字符串引号冲突了,要把它双写 ,MATLAB 里两个连续单引号 '' = 一个真正的单引号字符。</p>"
        +"<h3>发送端项目展示：</h3><img src='img/e.png'> "+"<h3>发送端看板展示：</h3><img src='img/e1.png'> "
-           +"<h3>3.2 接收端</h3>"+"把发送端看板的密文数组写入接收端的“Plaintxt”模块，从而模拟一次密文通信过程。<br>"+
-           "在接收端“Plaintxt”模块输入密文数组的格式：<code>uint8([61 169 233 220 127 70 226 58 68 194 193 26 88 183 92 77 25 150 144 52 151 87 33 176 74 148 192 181 83 115 237 162 39 207 213 236 120 137 51 94 148 237 128 192 243 21 206 237 213 23 142 28 45 171 113 133 20 13 251 245 226 164 164 93 9 37 53 11 92 84])</code>"+
+           +"<h3>3.2 接收端</h3>"+"把发送端看板的密文数组写入接收端的“Ciphertxt”模块，从而模拟一次密文通信过程。<br>"+
+           "在接收端“Ciphertxt”模块输入密文数组的格式：<code>uint8([61 169 233 220 127 70 226 58 68 194 193 26 88 183 92 77 25 150 144 52 151 87 33 176 74 148 192 181 83 115 237 162 39 207 213 236 120 137 51 94 148 237 128 192 243 21 206 237 213 23 142 28 45 171 113 133 20 13 251 245 226 164 164 93 9 37 53 11 92 84])</code>"+
            "<h3>接收端项目展示：<img src='img/d.png'></h3>"+"<h3>接收端看板展示：<img src='img/d1.png'></h3>"+"完整获取明文，解密成功！<br>"+
            "<h3>3.3 本次测试的洛伦兹混沌参数</h3>" +
            "<h3>1、洛伦兹混沌系统核心参数（收发两端完全一致）</h3>\n" +
@@ -1466,7 +1518,7 @@ window.ARTICLES_DATA = [
            "  plot(y,z,'r-','LineWidth',0.2); grid on; xlabel('y'); ylabel('z'); title('y-z 相图');<br>\n" +
            "\n" +
            "  figure('Color','w','Position',[940 400 400 350]);\n<br>" +
-           "  plot(x,z,'m-','LineWidth',0.2); grid on; xlabel('x'); ylabel('z'); title('x-z 相图');</code>"+"<br><br>可以手动更改各参数指标与仿真时间T  ."
+           "  plot(x,z,'m-','LineWidth',0.2); grid on; xlabel('x'); ylabel('z'); title('x-z 相图');</code>"+"<br><br>可以手动更改仿真时间与各参数指标。"
       
 
 

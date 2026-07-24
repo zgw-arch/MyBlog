@@ -7,7 +7,7 @@ var Card = (function () {
 
   function cardHTML(art) {
     var thumbHTML = art.thumbnail
-      ? '<img src="' + art.thumbnail + '" alt="" style="width:100%;height:100%;object-fit:cover;">'
+      ? '<img src="' + art.thumbnail + '" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">'
       : '<div class="placeholder">' + PLACEHOLDER_SVG + '</div>';
 
     var tagsHTML = '';

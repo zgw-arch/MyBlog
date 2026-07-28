@@ -3,7 +3,7 @@
 window.ARTICLES_DATA = [
   {"id":8,"title":"积分变换——拉普拉斯变换在积分运算与常微分方程中的应用  \n <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
         "Integral Transform — The Application of Laplace Transform in Integration and Ordinary Differential Equations<\p> " ,
-    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"img/11.jpg","thumbnailPosition": "50% -190px",
+    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"img/11.jpg","thumbnailPosition": "50% -90px",
     "excerpt":"","content":"<h2>一、积分运算</h2>\n" +
         "\n" +
         "<h3>1. 傅汝兰尼积分</h3>\n" +
@@ -674,7 +674,7 @@ window.ARTICLES_DATA = [
 
 
   {"id":6,"title":"伯努利数——三角函数的级数展开式推导\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"img/13.jpg","thumbnailPosition": "50% -240px","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
+        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"img/13.jpg","thumbnailPosition": "50% -180px","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
         "<h3>1. 泰勒级数基础定义</h3>\n" +
         "<p>函数 $f(x)$ 在 $x=x_0$ 处带皮亚诺余项的 $n$ 阶泰勒公式：</p>\n" +
         "<p>$$\n" +
@@ -1520,10 +1520,61 @@ window.ARTICLES_DATA = [
            "\n" +
            "  figure('Color','w','Position',[940 400 400 350]);\n<br>" +
            "  plot(x,z,'m-','LineWidth',0.2); grid on; xlabel('x'); ylabel('z'); title('x-z 相图');</code>"+"<br><br>可以手动更改仿真时间与各参数指标。"
-      
-
-
      },
+
+
+
+
+        {"id":14,"title":"STM32F103C8T6单片机的最小系统PCB二层板（嘉立创EDA） <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+        "Minimum System PCB for STM32F103C8T6 Microcontroller (Two-Layer Board, JLCEDA)<\p>","date":"2025-06-15","category":"教程","tags":["单片机","最小系统"],"thumbnail":"img/16.webp","thumbnailPosition": "50% -90px",
+  "excerpt":"","content":"" +"<h2>一、芯片的datasheet</h2>"+"$$\n" +
+         "\\begin{array}{|c|c|c|}\n" +
+         "\\hline\n" +
+         "\\text{MCU引脚} & \\text{功能} &\\text{描述} \\\\\n" +
+         "\\hline\n" +
+         "\\hline\n" +
+         "\\text{PC14-OSC32IN} & \\text{OSC32IN} & \\text{用于32.768KHZ晶振电路} \\\\\n" +
+
+         "\\text{PC15-OSC3OUT} & \\text{OSC32OUT} & \\text{用于32.768KHZ晶振电路} \\\\\n" +
+         "\\hline\n" +
+         "\\text{PD0} & \\text{OSCIN} & \\text{用于8MHZ晶振电路} \\\\\n" +
+       
+         "\\text{PD1} & \\text{OSCOUT} & \\text{用于8MHZ晶振电路} \\\\\n" +
+         "\\hline\n" +
+         "\\text{NRST} & \\text{NRST} &\\text{用于复位电路} \\\\\n" +
+         "\\hline\n" +
+              "\\text{PA10} & \\text{RX} &\\text{用于USB 转 TTL（CH340）下载电路的RXD}  \\\\\n" +
+               "\\text{PA9} & \\text{TX} &\\text{用于USB 转 TTL（CH340）下载电路的TXD}  \\\\\n" +  "\\hline\n" +
+               "\\text{PA13} & \\text{JTMS/SWDIO} &\\text{用于ST-LINK下载电路的SWDIO}  \\\\\n" +
+                 "\\text{PA14} & \\text{JTCK/SWCLK} &\\text{用于ST-LINK下载电路的SWCLK}  \\\\\n" +  "\\hline\n" +
+
+              "\\text{BOOT0} & \\text{BOOT0} &\\text{用于模式选择电路的BOOT0}  \\\\\n" +
+              "\\text{PB2} & \\text{BOOT1} &\\text{用于模式选择电路的BOOT1}  \\\\\n" +  "\\hline\n" +
+
+              "\\text{VDDA} & \\text{接3.3V外部电压} &\\ \\\\\n" +
+              "\\text{VDD1} & \\text{接3.3V外部电压} &\\  \\\\\n" +
+              "\\text{VDD2} & \\text{接3.3V外部电压} &\\  \\\\\n" +
+              "\\text{VDD3} & \\text{接3.3V外部电压} &\\ \\\\\n" +
+              "\\hline\n" +
+
+              "\\text{VSSA} & \\text{接GND} &\\ \\\\\n" +
+              "\\text{VSS1} & \\text{接GND} &\\  \\\\\n" +
+              "\\text{VS2} & \\text{接GND} &\\  \\\\\n" +
+              "\\text{VSS3} & \\text{接GND} &\\ \\\\\n" +
+
+
+
+         "\\hline\n" +
+         "\\end{array}\n" +
+         "$$\n"+ "<h2>二、最小系统的原理图</h2>" + "<h3>2.1 最小系统的MCU、复位电路、晶振电路、下载电路、模式选择电路</h3>"+  "<img src='img/32min_compressed.png'> "+
+        "<h3>2.2 最小系统的USB供电接口、5V-3.3V转换电路接口、滤波电容原理图</h3>"+"&ensp;&ensp;芯片内核、所有 VDD：VDD_1/VDD_2/VDD_3/VDDA 供电引脚额定工作电压为2.0~3.6V，极限耐压仅 4.0V\n<br>" +
+              "USB Type-C 输出标准 5V，直接接到 MCU 电源引脚会瞬间击穿内部电路，芯片直接报废。<br>"+"&ensp;&ensp;图中全部为 100nF（0.1μF）陶瓷去耦电容，标准电源滤波设计：一端接电源轨（VCC3V3/VCC5V），一端直连 GND。\n" +
+              "作用：吸收电源高频毛刺、抑制电压波动，给 MCU、稳压芯片、外设提供干净供电，防止晶振乱振、串口乱码、传感器数据跳变。"+"<img src='img/32min2_compressed.png'> "+
+              "<h2>三、PCB二层板</h2>"+"<img src='img/PCB2_compressed.png'> "+"<img src='img/PCB3_compressed.png'> "
+        },
+
+
+
 
 
   /* {"id":12,"title":"Python 异步编程：async/await","date":"2025-04-20","category":"课程","tags":["Python","异步编程"],"thumbnail":"","excerpt":"从回调函数到 async/await，全面梳理 Python 异步编程演进历程。","content":"<h2>基础用法</h2><pre><code>async def fetch(url):\n    async with aiohttp.ClientSession() as s:\n        return await s.get(url)</code></pre>"},

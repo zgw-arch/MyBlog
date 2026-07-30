@@ -2,7 +2,7 @@
 
 .article-card {
   /*卡片宽度*/
-  max-width:700px;
+  max-width:750px;
   display: flex; flex-direction: column;
   background: rgba(30, 32, 38, 0.78);
   backdrop-filter: blur(16px);
@@ -26,7 +26,7 @@
   position: relative;
   width: 100%;
   /*卡片高度*/
-  height: 160px;
+  height: 172px;
   overflow: hidden;
   background: var(--surface-2);
 }

@@ -1,9 +1,9 @@
 
 
 window.ARTICLES_DATA = [
-  {"id":8,"title":"积分变换——拉普拉斯变换在积分运算与常微分方程中的应用  \n <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+  {"id":8,"title":"积分变换——拉普拉斯变换在积分运算与常微分方程中的应用  \n <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
         "Integral Transform — The Application of Laplace Transform in Integration and Ordinary Differential Equations<\p> " ,
-    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"img/11.jpg","thumbnailPosition": "50% -90px",
+    "date":"2026-05-11","category":"教程","tags":["积分变换","微分方程","拉普拉斯变换"],"thumbnail":"https://img.wjwj.top/2026/07/30/4028901df07261cc6d90c163add135db.png",
     "excerpt":"","content":"<h2>一、积分运算</h2>\n" +
         "\n" +
         "<h3>1. 傅汝兰尼积分</h3>\n" +
@@ -191,11 +191,11 @@ window.ARTICLES_DATA = [
 
 
 
-  {"id":2,"title":"含参积分——费曼积分法 \t  <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Parametric Integrals — Feynman Integration Method<\p> ","date":"2025-07-22","category":"记录","tags":["微积分","高等数学"],"thumbnail":"img/8.jpg","thumbnailPosition": "50% -220px","excerpt":"利用费曼积分法解决积分问题","content":"<h2>含参积分——费曼积分法</h2>\n" +
+  {"id":2,"title":"含参积分——费曼积分法 \t  <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Parametric Integrals — Feynman Integration Method<\p> ","date":"2025-07-22","category":"记录","tags":["微积分","高等数学"],"thumbnail":"https://img.wjwj.top/2026/07/30/ea74766589323c24e0e84093116e6a1a.png","excerpt":"利用费曼积分法解决积分问题","content":"<h2>含参积分——费曼积分法</h2>\n" +
         "\n" +
         "<h3>1. $\\displaystyle I_1=\\int_0^\\infty \\frac{\\cos (x)}{(x^2+1)^2}dx$</h3>\n" +
-        "<p>令 $\\displaystyle f(t)=\\int_0^\\infty \\frac{\\cos (xt)}{x^2+a}dx,\\ a>0$，对 $f(t)$ 作拉普拉斯变换</p>\n" +
+        "<p>令 $\\displaystyle f(t)=\\int_0^\\infty \\frac{\\cos (xt)}{x^2+a}dx,\\ a>0$，对 $f(t)$ 作拉普拉斯               变换</p>\n" +
         "<p>$$\n" +
         "\\begin{aligned}\n" +
         "\\mathscr{L}[f(t)]&=\\int_0^\\infty\\left[\\int_0^\\infty \\frac{\\cos (xt)}{x^2+a}dx\\right]e^{-st}dt\\\\\n" +
@@ -278,8 +278,8 @@ window.ARTICLES_DATA = [
         "$$</p>\n"},
 
 
-  {"id":3,"title":"傅里叶级数与留数定理求解无穷级数的收敛值\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Using Fourier series and the residue theorem to find the convergence value of an infinite series<\p>","date":"2026-08-09","category":"课程","tags":["傅里叶变换","留数","积分变换","无穷级数"],"thumbnail":"img/9.jpg","thumbnailPosition": "50% -180px","excerpt":"深入解析复数形式的傅里叶级数推导，探讨留数定理的应用。","content":"<h2>一、傅里叶级数</h2>\n" +
+  {"id":3,"title":"傅里叶级数与留数定理求解无穷级数的收敛值\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Using Fourier series and the residue theorem to find the convergence value of an infinite series<\p>","date":"2026-08-09","category":"课程","tags":["傅里叶变换","留数","积分变换","无穷级数"],"thumbnail":"https://img.wjwj.top/2026/07/30/ab9356581a6bbe6d23e0462c0bafd0ff.png","excerpt":"深入解析复数形式的傅里叶级数推导，探讨留数定理的应用。","content":"<h2>一、傅里叶级数</h2>\n" +
         "<h3>1. 复数形式傅里叶级数完整推导</h3>\n" +
         "<p>周期为 $2l$ 函数实傅里叶标准展开式：</p>\n" +
         "<p>$$f(x)\\sim \\frac{a_0}{2}+\\sum_{n=1}^{\\infty}\\left(a_n\\cos\\frac{n\\pi x}{l}+b_n\\sin\\frac{n\\pi x}{l}\\right)$$</p>\n" +
@@ -444,8 +444,8 @@ window.ARTICLES_DATA = [
 
 
 
-  {"id":4,"title":"全微分方程与积分因子\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Total Differential Equations and Integrating Factors<\p>","date":"2026-09-02","category":"记录","tags":["微分方程","积分因子"],"thumbnail":"img/10.jpg","thumbnailPosition": "50% -150px","excerpt":"全微分方程的求解","content":"<h2>一、一阶非齐次线性微分方程</h2>\n" +
+  {"id":4,"title":"全微分方程与积分因子\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Total Differential Equations and Integrating Factors<\p>","date":"2026-09-02","category":"记录","tags":["微分方程","积分因子"],"thumbnail":"https://img.wjwj.top/2026/07/30/4b663a6cbcd347dc3e9ce3c7f603c4b4.png","excerpt":"全微分方程的求解","content":"<h2>一、一阶非齐次线性微分方程</h2>\n" +
         "<h3>通解推导（常数变易法）</h3>\n" +
         "<p>标准形式：$y'(x)=P(x)y(x)+Q(x)$</p>\n" +
         "<p>对应齐次方程：$y'(x)=P(x)y$</p>\n" +
@@ -552,8 +552,8 @@ window.ARTICLES_DATA = [
 
 
 
-  {"id":5,"title":"一阶微分方程求解技巧\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Tips for Solving First-Order Differential Equations<\p>","date":"2025-09-07","category":"教程","tags":["微分方程"],"thumbnail":"img/12.jpg","thumbnailPosition": "50% -130px","thumbnailPosition": "50% -160px","excerpt":"","content":"<h2>一、三角换元型一阶线性微分方程例题</h2>\n" +
+  {"id":5,"title":"一阶微分方程求解技巧\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Tips for Solving First-Order Differential Equations<\p>","date":"2025-09-07","category":"教程","tags":["微分方程"],"thumbnail":"https://img.wjwj.top/2026/07/30/2e1e776bd7722a5cb7ebd7dc0bcb459b.png","excerpt":"","content":"<h2>一、三角换元型一阶线性微分方程例题</h2>\n" +
         "<h3>例1：$\\displaystyle \\frac{1}{\\cos^2 y}y'+\\frac{\\tan y}{x\\ln x}=\\frac{1}{x}$</h3>\n" +
         "<p>由微分公式：$\\displaystyle d(\\tan y)=\\frac{1}{\\cos^2 y}dy$，原方程改写：</p>\n" +
         "<p>$$\\frac{d(\\tan y)}{dx}+\\frac{\\tan y}{x\\ln x}=\\frac{1}{x}$$</p>\n" +
@@ -673,8 +673,8 @@ window.ARTICLES_DATA = [
         "<p>$$y=Cx-\\frac{1}{4}x^2-4C^2,\\quad C\\in\\mathbb{R}$$</p>\n"},
 
 
-  {"id":6,"title":"伯努利数——三角函数的级数展开式推导\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"img/13.jpg","thumbnailPosition": "50% -180px","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
+  {"id":6,"title":"伯努利数——三角函数的级数展开式推导\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Bernoulli Numbers – Deriving the Series Expansion of Trigonometric Functions<\p>","date":"2025-10-12","category":"记录","tags":["洛朗级数","泰勒级数","伯努利数"],"thumbnail":"https://img.wjwj.top/2026/07/30/30c2459d0b4fe61cb7fee67d705bcd54.png","excerpt":"","content":"<h2>一、伯努利数的生成函数</h2>\n" +
         "<h3>1. 泰勒级数基础定义</h3>\n" +
         "<p>函数 $f(x)$ 在 $x=x_0$ 处带皮亚诺余项的 $n$ 阶泰勒公式：</p>\n" +
         "<p>$$\n" +
@@ -765,8 +765,8 @@ window.ARTICLES_DATA = [
         "<p>$$\\csc x=\\sum_{n=0}^{\\infty}\\frac{R_{2n}}{(2n)!}x^{2n-1}=\\frac1x+\\frac16x+\\frac{7}{360}x^3+\\dots$$</p>\n"},
 
 
- {"id":7,"title":"特殊函数与广义积分<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Special Functions and Generalized Integrals<\p>","date":"2025-10-18","category":"记录","tags":["微积分","特殊函数"],"thumbnail":"img/14.jpg","thumbnailPosition": "50% -90px","excerpt":"","content":"<h2>一、Beta-Gamma 型广义积分：$\\displaystyle I=\\int_{0}^{+\\infty}\\frac{1}{1+x^n}dx \\quad(n>1,\\ n\\neq k\\pi)$</h2>\n" +
+ {"id":7,"title":"特殊函数与广义积分<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Special Functions and Generalized Integrals<\p>","date":"2025-10-18","category":"记录","tags":["微积分","特殊函数"],"thumbnail":"https://img.wjwj.top/2026/07/30/7bcac0b52444dac53d37e0eae6ed79b3.jpg","excerpt":"","content":"<h2>一、Beta-Gamma 型广义积分：$\\displaystyle I=\\int_{0}^{+\\infty}\\frac{1}{1+x^n}dx \\quad(n>1,\\ n\\neq k\\pi)$</h2>\n" +
        "<h3>变量代换与Beta函数转化</h3>\n" +
        "<p>令 $K=x^n \\implies dK=nx^{n-1}dx \\implies dx=\\frac{1}{n}K^{\\frac{1-n}{n}}dK$</p>\n" +
        "<p>代入积分：\n" +
@@ -878,7 +878,7 @@ window.ARTICLES_DATA = [
        "$$\\int_{0}^{+\\infty}\\frac{1}{1+x^3}dx=\\frac{2\\sqrt{3}\\pi}{9}$$</p>\n"},
 
 
-  {"id":1,"title":"变限积分的等价无穷小\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+  {"id":1,"title":"变限积分的等价无穷小\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
         "Equivalent infinitesimals of variable-limit integrals<\p>","date":"2025-07-15","category":"记录","tags":["变限积分","等价无穷小"],"thumbnail":"img/15.webp","excerpt":"","content":"<h2>一、变上限积分等价无穷小替换定理</h2>\n" +
         "<h3>定理条件</h3>\n" +
         "<p>设 $f(x),g(x)$ 在 $x=0$ 某去心邻域可导，满足：</p>\n" +
@@ -939,9 +939,9 @@ window.ARTICLES_DATA = [
 
 
     
-   {"id":9,"title":"基于STM32F103C8T6与I2C协议的月薪喵动画效果\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Monthly Salary Cat Animation Effect Based on STM32F103C8T6 and I2C Protocol<\p>","date":"2025-10-22","category":"教程","tags":["STM32","I2C","嵌入式","月薪喵"],"thumbnail":"img/6.jpg","thumbnailPosition": "50% -120px","excerpt":"基于STM32F103C8与I2C协议的OLED显示月薪喵动画效果。","content":"<div style='text-align:center;'><img src='img/1.gif' alt='' style='max-width:100%;width:100px;height:90px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'></div><p>YueXinMiao2（月薪喵2）是一个基于 STM32F103C8T6 的裸机嵌入式项目，通过 I2C 协议驱动 0.96 寸 SSD1306 OLED（128×64 单色），循环播放 28 帧猫咪跳跃动画，帧率约 25 FPS。用户代码仅约 230 行 C，Flash 总占用约 19.4KB，是一款极致精简的入门级嵌入式显示项目。</p><p><strong>硬件平台：</strong>STM32F103C8T6（Cortex-M3, 72MHz），I2C1 400kHz Fast Mode，PB6=SCL, PB7=SDA，外部 8MHz 晶振 → PLL ×9 → 72MHz。</p><p><strong>OLED 驱动：</strong>SSD1306 I2C 地址 0x78，33 字节初始化命令序列（对比度 255、段重映射、COM 翻转、电荷泵使能）。核心绘制函数 OLED_DrawBitmap() 将位图逐页转换后批量 I2C 发送，64×64 精灵仅需 8 次事务。I2C 总线异常时自动软复位恢复。</p><p><strong>动画数据：</strong>28 帧 × 64×64 像素 × 1bpp = 14,336 字节，占 Flash 30.2%，采用 MSB-left 行优先打包格式，条件编译仅在 main.c 实例化一次。</p><p><strong>主循环：</strong>每帧 HAL_Delay(40ms) → 25 FPS → 完整周期 1.12 秒。" +
-         "</p><div style='text-align:center;margin-top:24px;'><a href='download/YueXinMiao2.zip' download onclick='return confirm(\"确认下载 YueXinMiao2.zip？\")' style='display:inline-block;padding:10px 40px;background:#3b82f6;color:#a80505;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:1px;'>点击下载项目源码</a></div>" +
+   {"id":9,"title":"基于STM32F103C8T6与I2C协议的月薪喵动画效果\t<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Monthly Salary Cat Animation Effect Based on STM32F103C8T6 and I2C Protocol<\p>","date":"2025-10-22","category":"教程","tags":["STM32","I2C","嵌入式","月薪喵"],"thumbnail":"https://img.wjwj.top/2026/07/30/b133d7994152e1fb765be011b1cc8153.png","excerpt":"基于STM32F103C8与I2C协议的OLED显示月薪喵动画效果。","content":"<div style='text-align:center;'><img src='img/1.gif' alt='' style='max-width:100%;width:100px;height:90px;border-radius:8px;margin-bottom:16px;clip-path:inset(0 5px 0 5px);'></div><p>YueXinMiao2（月薪喵2）是一个基于 STM32F103C8T6 的裸机嵌入式项目，通过 I2C 协议驱动 0.96 寸 SSD1306 OLED（128×64 单色），循环播放 28 帧猫咪跳跃动画，帧率约 25 FPS。用户代码仅约 230 行 C，Flash 总占用约 19.4KB，是一款极致精简的入门级嵌入式显示项目。</p><p><strong>硬件平台：</strong>STM32F103C8T6（Cortex-M3, 72MHz），I2C1 400kHz Fast Mode，PB6=SCL, PB7=SDA，外部 8MHz 晶振 → PLL ×9 → 72MHz。</p><p><strong>OLED 驱动：</strong>SSD1306 I2C 地址 0x78，33 字节初始化命令序列（对比度 255、段重映射、COM 翻转、电荷泵使能）。核心绘制函数 OLED_DrawBitmap() 将位图逐页转换后批量 I2C 发送，64×64 精灵仅需 8 次事务。I2C 总线异常时自动软复位恢复。</p><p><strong>动画数据：</strong>28 帧 × 64×64 像素 × 1bpp = 14,336 字节，占 Flash 30.2%，采用 MSB-left 行优先打包格式，条件编译仅在 main.c 实例化一次。</p><p><strong>主循环：</strong>每帧 HAL_Delay(40ms) → 25 FPS → 完整周期 1.12 秒。" +
+         "</p><div style='text-align:center;margin-top:24px;'><a href='download/YueXinMiao2.zip' download onclick='return confirm(\"确认下载 YueXinMiao2.zip？\")' style='display:inline-block;padding:10px 40px;background:#3b82f6;color:#dacfcf;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:1px;'>点击下载项目源码</a></div>" +
          "\n" +
          "\n" +
          "\n" +
@@ -1121,8 +1121,8 @@ window.ARTICLES_DATA = [
 
 
 
-  {"id":10,"title":"github访问加速方式<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Ways to speed up GitHub access<\p>","date":"2025-11-15","category":"教程","tags":["github"],"thumbnail":"img/16.webp","excerpt":"","content":"" +
+  {"id":10,"title":"github访问加速方式<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Ways to speed up GitHub access<\p>","date":"2025-11-15","category":"教程","tags":["github"],"thumbnail":"https://img.wjwj.top/2026/07/30/9f2ff1d435fb698c5433c3b4f0d6561d.png","excerpt":"","content":"" +
         "<h2>方式一：UU加速器</h2>打开uu加速器，搜素“学术”二字即可，选择“学术资源”进行加速，不过加速效果不是太好，断联风险较高。" +
         "<img src='img/5.webp' alt='' >" +
         "<h2>方式二：Watt Toolkit加速器</h2>"
@@ -1137,8 +1137,8 @@ window.ARTICLES_DATA = [
 
 
 
-   {"id":11,"title":"基于Labview的HC05蓝牙串口数据实时采集系统的上位机<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:40px;\">" +
-        "The upper computer of HC05 Bluetooth serial port real-time data acquisition system based on Labview<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"img/23.jpg" +
+   {"id":11,"title":"基于Labview的HC05蓝牙串口数据实时采集系统的上位机<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "The upper computer of HC05 Bluetooth serial port real-time data acquisition system based on Labview<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"https://img.wjwj.top/2026/07/30/bc726b60b88f17595a42d7791b670ba7.jpg" +
          "","excerpt":"","content":"LABVIEW下载参考http://ruanjian.seosichuan.cn/ ，本项目采用2024（64bit）版本" +
         "<h2>前置项目</h2><h3>通过单片机集成DHT11与光敏传感器实现了温度T、湿度H、光照强度L的周期性数据采集，并配置了HC-05无线蓝牙透传模块</h3>"
          +"&ensp;&ensp;简易PCB二层板(STM32F103C8T6最小系统板 + 2.54-1*4p母 + 2.54-1*6p母 + DHT11 + HC-05 + LED + OLED + 光敏传感器 + 蜂鸣器 + 嘉立创EDA软件自动布线)<br>"
@@ -1283,9 +1283,9 @@ window.ARTICLES_DATA = [
 
 
 
-{"id":12,"title":"基于labview的巴特沃斯音频滤波降噪系统<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
+{"id":12,"title":"基于labview的巴特沃斯音频滤波降噪系统<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
         "LabVIEW-based Butterworth Audio Filtering and Noise Reduction<\p>","date":"2026-01-15","category":"教程",
-  "tags":["巴特沃斯","滤波","labview"],"thumbnail":"img/theme.webp",
+  "tags":["巴特沃斯","滤波","labview"],"thumbnail":"https://img.wjwj.top/2026/07/30/dfff8f62d272b99159dca9d54ab8d3e1.webp",
   "excerpt":"","content":"" +
         "<h2>1、这是未添加噪音的纯净音乐音频   ↓</h2><audio controls src=\"img/h264_video.mp3\" preload=\"none\"></audio>"+
       " <h3>这分别是此音频的时域信号和fft频域信号   ↓</h3><img src='img/不含噪音的纯净音乐.png'> "+"<img src='img/纯净音乐的fft.png'>"+
@@ -1380,9 +1380,9 @@ window.ARTICLES_DATA = [
 
 
     
-     {"id":13,"title":"基于simulink的洛伦兹混沌无线通信加密系统 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Lorenz Chaotic Wireless Communication Encryption System Based on Simulink \p>","date":"2026-03-02","category":"教程","tags":["洛伦兹","混沌系统","密码","通信"],"thumbnail":"img/16.webp",
-  "thumbnailPosition": "50% -90px","excerpt":"" ,"content":"<h2>一、洛伦兹混沌吸引子XZ Graph相图</h2>\n" +
+     {"id":13,"title":"基于simulink的洛伦兹混沌无线通信加密系统 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Lorenz Chaotic Wireless Communication Encryption System Based on Simulink \p>","date":"2026-03-02","category":"教程","tags":["洛伦兹","混沌系统","密码","通信"],"thumbnail":"https://img.wjwj.top/2026/07/30/db18c38a3654f87b9fae4ae32b4c2f58.png",
+ "excerpt":"" ,"content":"<h2>一、洛伦兹混沌吸引子XZ Graph相图</h2>\n" +
            "<img src='img/XY.png'>\n" +
            "<p>&ensp;&ensp;本加密系统仅根据积分器输出的<code>x(t)</code>波形采样数据生成混沌密钥流。<br>&ensp;&ensp;洛伦兹混沌系统对控制参数（如参数<code>rho</code>）极度敏感：哪怕只改 <code>0.001</code>，仿真一段时间后<code> x(t)</code> 轨迹会彻底偏离原来的曲线（蝴蝶效应），这便是混沌系统的主要特征之一。</p>\n" +
 "<h2>二、系统原理</h2>"+
@@ -1525,8 +1525,8 @@ window.ARTICLES_DATA = [
 
 
 
-        {"id":14,"title":"STM32F103C8T6单片机的最小系统PCB二层板（嘉立创EDA） <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:42px;\">" +
-        "Minimum System PCB for STM32F103C8T6 Microcontroller (Two-Layer Board, JLCEDA)<\p>","date":"2025-06-15","category":"教程","tags":["单片机","最小系统"],"thumbnail":"img/16.webp","thumbnailPosition": "50% -90px",
+        {"id":14,"title":"STM32F103C8T6单片机的最小系统PCB二层板（嘉立创EDA） <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
+        "Minimum System PCB for STM32F103C8T6 Microcontroller (Two-Layer Board, JLCEDA)<\p>","date":"2025-06-15","category":"教程","tags":["单片机","最小系统"],"thumbnail":"https://img.wjwj.top/2026/07/30/a93614fee440bdf644ba791f162bf60e.png",
   "excerpt":"","content":"" +"<h2>一、芯片的datasheet</h2>"+"$$\n" +
          "\\begin{array}{|c|c|c|}\n" +
          "\\hline\n" +

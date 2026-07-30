@@ -33,8 +33,7 @@
 .card-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover;
-  /*图片过大裁断参数*/
-  display: block; object-position: 50% -100px;
+
 }
 /* 图片底部渐变：无缝过渡到卡片底色 */
 .card-img-wrap::after {

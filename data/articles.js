@@ -1138,7 +1138,7 @@ window.ARTICLES_DATA = [
 
 
    {"id":11,"title":"基于Labview的HC05蓝牙串口数据实时采集系统的上位机<p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:23px;\">" +
-        "The upper computer of HC05 Bluetooth serial port real-time data acquisition system based on Labview<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"https://img.wjwj.top/2026/07/30/bc726b60b88f17595a42d7791b670ba7.jpg" +
+        "The upper computer of HC05 Bluetooth serial port real-time data acquisition system based on Labview<\p>","date":"2025-11-19","category":"教程","tags":["labview","蓝牙"],"thumbnail":"https://img.wjwj.top/2026/07/30/4116931dc98ac1ba16f89f7664f299e9.png" +
          "","excerpt":"","content":"LABVIEW下载参考http://ruanjian.seosichuan.cn/ ，本项目采用2024（64bit）版本" +
         "<h2>前置项目</h2><h3>通过单片机集成DHT11与光敏传感器实现了温度T、湿度H、光照强度L的周期性数据采集，并配置了HC-05无线蓝牙透传模块</h3>"
          +"&ensp;&ensp;简易PCB二层板(STM32F103C8T6最小系统板 + 2.54-1*4p母 + 2.54-1*6p母 + DHT11 + HC-05 + LED + OLED + 光敏传感器 + 蜂鸣器 + 嘉立创EDA软件自动布线)<br>"

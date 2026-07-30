@@ -2,7 +2,7 @@
 
 .article-card {
   /*卡片宽度*/
-  max-width:900px;
+  max-width:800px;
   display: flex; flex-direction: column;
   background: rgba(30, 32, 38, 0.78);
   backdrop-filter: blur(16px);

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var ARTICLES_PER_PAGE = 4;
+  var ARTICLES_PER_PAGE = 8;
   var articles = [];
   var currentPage = 1;
   var totalPages = 1;

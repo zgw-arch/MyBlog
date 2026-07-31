@@ -1572,7 +1572,39 @@ window.ARTICLES_DATA = [
               "作用：吸收电源高频毛刺、抑制电压波动，给 MCU、稳压芯片、外设提供干净供电，防止晶振乱振、串口乱码、传感器数据跳变。"+"<img src='img/32min2_compressed.png'> "+
               "<h2>三、PCB二层板</h2>"+"<img src='img/PCB2_compressed.png'> "+"<img src='img/PCB3_compressed.png'> "
         },
+  {"id":15,"title":"关于digitalplat二级域名的cloudflare托管，并部署至GITHUB PAGES静态站点 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:13px;\">" +
+        "The subdomain of digitalplat is hosted on Cloudflare and deployed as a static site on GitHub Pages<\p>","date":"2026-07-05","category":"","tags":["Hexo",""],"thumbnail":"https://img.wjwj.top/2026/08/01/9ac04e866681c1c755e604131b1b3525.png\" alt=\"5bbdde9c70381ef9f221344fb4d6d657\" border=\"0\">",
+  "excerpt":"","content":"<h2>一、备注</h2><h3>github静态站点链接:https://xxx.github.io/MyBlog/\n" +
+            "其中xxx是你的github用户名，MyBlog是用户设置的站点仓库名。"+"<br>本教程需要在github、cloudflare以及digitalplat网站来回切换<br>" +"<h2>二、获取免费域名</h2>"+"<h3>访问domain.digitalplat.org\n</h3>"
+            +"<img src=\"https://img.wjwj.top/2026/08/01/8ffc1479f429623a5303d1fe59c55f4b.jpg\" alt=\"3648375ef9e06f1946a4da8104aba82d\" border=\"0\">"
++"在注册界面输入你的域名，并选择DPDNS后缀，点击检查可用性。\n<br>" +
+            "例如本站的域名是aradish.dpdns.org，文本框填写aradish即可，其中.dpdns.org是后缀。\n"
+            +"<img src=\"https://img.wjwj.top/2026/08/01/b2a63b35431bda4249c1b99fec19e4ef.jpg\" alt=\"b00f8fcef6364cca3abaaa9da4e4867f\" border=\"0\">"+
+            "选择使用免费插槽（一个免费额度），点击注册。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/790ba0a67cc4cbe96247fdd6380512ee.jpg\" alt=\"f7d9f1bfff4f6d0614ba0ddd8614f703\" border=\"0\">"
+            +"成功获取免费域名！\n"+
+            "<img src=\"https://img.wjwj.top/2026/08/01/31783821136b7f7e0c6c1bbdb1770135.jpg\" alt=\"080eb13c8b86ba5f58520b306aaa684f\" border=\"0\">"
+        +"<h2>二、访问cloudflare官网\n</h2>"+"在Domains/Overview界面点击Add domain（新增域名）\n"+"<img src=\"https://img.wjwj.top/2026/08/01/5b86d157babf411b796ad5839a7215ba.jpg\" alt=\"5f3475d59156583dd1e6bf0491dd1821\" border=\"0\">"
+        +"选择connect a domain（连接一个域名）"+"<img src=\"https://img.wjwj.top/2026/08/01/270b1a5ffa46cf8845b9d2d6af677dac.png\" alt=\"0b0810c2a45218561793e4f48e2bd159\" border=\"0\">"
+        +"输入你获取的免费域名，并点击continue\n"+"<img src=\"https://img.wjwj.top/2026/08/01/9094bdb6c64beb4e4a8d23dbb0c53033.png\" alt=\"a99bed5d15f754d1f95084c78d39d5ed\" border=\"0\">"
+        +"选择免费计划。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/045e2abceb05ebbdbb7c2bc184797a67.jpg\" alt=\"73238d71f56eccff74931d1fc43c914d\" border=\"0\">"
+        +"选择continue to activation继续激活。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/6d46e94e54f86c912b72057cc0136907.jpeg\" alt=\"700d6141723232d29acb2fe2a168b9da\" border=\"0\">"
+        +"复制cloudflare的两个名称服务器。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/c6e0a76d613d0a16a6fed985b8bff705.png\" alt=\"8d1a726e394917d107fd2988493461b3\" border=\"0\">"
+        +"回到domain.digitalplat.org，把复制的名称分别粘贴到……最后点击更新名称服务器。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/26c173cc076eb20cb80dc625f10b0035.jpg\" alt=\"1f06278e9a00f793b3fa616ef11fa24d\" border=\"0\">"
+        +"回到cloudflare，点击我已更新名称服务器。\n"+"<img src=\"https://img.wjwj.top/2026/08/01/5abf61478e113d2b7e0233678a4e0f1f.jpg\" alt=\"3ce05818e5777669e81d72d6bf4a1336\" border=\"0\">"
+        +"等待几分钟……刷新页面，域名已经成功托管至cloudflare！\n"+"<img src=\"https://img.wjwj.top/2026/08/01/f65af8ed350966e4acc7ff38aeb90ae8.png\" alt=\"c0a1dc6f1bb4707986997751744927be\" border=\"0\">"
+        +"<h2>三、DPDNS绑定github站点\n</h2>"+"<h3>目标：实现域名 aradish.dpdns.org直接访问 GitHub Pages 静态站点。\n</h3>"+
+            "查看你的github站点仓库，进入settings的pages页面，检查链接是能够正常访问站点的。点击“Visit site”可以跳转到本站首页。"+
+          "<img src=\"https://img.wjwj.top/2026/08/01/39e7f12a38dc493733571a7659258e0d.jpg\" alt=\"6689097de81fb23e3cb88baf8d8a7c09\" border=\"0\">"+
+            "回到cloudflare，点击进入DNS页面。\n"+
+            "<img src=\"https://img.wjwj.top/2026/08/01/854d9c710294d53ae54cba80ed0d6f86.jpg\" alt=\"e70dd46b12d8fc3382cb50307585c02d\" border=\"0\">"+
+            "点击两次Add record，新增两条记录，\"目标\"栏目填写\"xxx.github.io\"\n<br>" +
+            " 代理地位：点击云朵，切换灰色仅限DNS用户「DNS only」\n"+"<img src=\"https://img.wjwj.top/2026/08/01/6127caf73e424d5ec849d6207b295649.jpg\" alt=\"b9dd076d3c9b262d5967bcadf4638c82\" border=\"0\">"+
+            "<img src=\"https://img.wjwj.top/2026/08/01/0faab01b0aef0109d5424a7674732824.jpg\" alt=\"02a529d752b0e287e173e42302e11660\" border=\"0\">"+"回到你的github站点仓库，进入pages界面，在custom domain里输入域名，点击save……等待……绑定成功！\n"
+        +"<img src=\"https://img.wjwj.top/2026/08/01/cc7acde4e14b516f415c3bf5901af0d7.jpg\" alt=\"6c7435df59d6e9999936a7158c254250\" border=\"0\">"+
+            "耐心等待10min左右……之后可以直接通过域名访问你的网站！\n"
 
+
+        },
 
 
 

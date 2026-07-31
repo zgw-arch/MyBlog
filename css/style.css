@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 .page{display:flex;max-width:1200px;margin:10px auto;gap:36px;padding:28px;padding-bottom:80px;min-height:60vh}
 
 /* ── Header ── */
-.header{height:100vh;min-height:360px;max-height:800px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;background:var(--surface-3)}
+.header{height:100vh;min-height:360px;max-height:800px;overflow:hidden;position:sticky;top:52px;display:flex;align-items:center;justify-content:center;background:var(--surface-3);will-change:clip-path;contain:layout style paint}
 .header-bg{position:absolute;inset:0;z-index:0}
 /*header主题图片的玻璃遮罩*/
 

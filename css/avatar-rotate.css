@@ -1,0 +1,17 @@
+/* ── 头像旋转 ── */
+
+.avatar {
+  animation-name: avatarSpin;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 悬停时加速：只改时长，不重置动画 */
+.profile:hover .avatar {
+  animation-duration: 0.1s;
+}
+
+@keyframes avatarSpin {
+  to { transform: rotate(360deg); }
+}

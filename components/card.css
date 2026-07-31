@@ -2,12 +2,15 @@
 
 .article-card {
   /*卡片宽度*/
-  max-width:750px;
-  display: flex; flex-direction: column;
+  max-width:800px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
   background: rgba(30, 32, 38, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  
+
   border-radius: var(--radius-lg);
   margin-bottom: 24px;
   overflow: hidden;
@@ -21,28 +24,51 @@
   box-shadow: 0 12px 40px rgba(0,0,0,0.55);
 }
 
-/* ── 上层：预览图 ── */
+/* ── 奇数篇：图片在左（默认 row）── */
+.article-card:nth-child(odd) {
+  flex-direction: row;
+}
+
+/* ── 偶数篇：图片在右（row-reverse）── */
+.article-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ── 图片区：4:3 长方形 ── */
 .card-img-wrap {
   position: relative;
-  width: 100%;
-  /*卡片高度*/
-  height: 172px;
+  flex: 0 0 280px;          /* 固定宽度，4:3 → 高度自动 210px */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--surface-2);
 }
 .card-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover;
-
 }
-/* 图片底部渐变：无缝过渡到卡片底色 */
-.card-img-wrap::after {
+
+/* ── 图片边缘渐变：朝向文字一侧 ── */
+/* 奇数：渐变在图片右侧 */
+.article-card:nth-child(odd) .card-img-wrap::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 64px;
-  background: linear-gradient(to bottom, transparent, rgba(30, 32, 38, 0.78));
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 0;
+  width: 64px;
+  background: linear-gradient(to right, transparent, rgba(30, 32, 38, 0.78));
   pointer-events: none;
 }
+/* 偶数：渐变在图片左侧 */
+.article-card:nth-child(even) .card-img-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0;
+  width: 64px;
+  background: linear-gradient(to left, transparent, rgba(30, 32, 38, 0.78));
+  pointer-events: none;
+}
+
 /* 无图时的占位 */
 .card-img-wrap .placeholder {
   position: absolute; inset: 0;
@@ -53,11 +79,14 @@
   width: 36px; height: 36px; opacity: 0.12; color: var(--fg-2);
 }
 
-/* ── 下层：文字信息 ── */
+/* ── 文字信息区 ── */
 .card-body {
+  flex: 1;
+  min-width: 0;
   padding: 20px 22px 22px;
   display: flex; flex-direction: column;
   gap: 10px;
+  justify-content: center;
 }
 .card-title {
   font-size: 1.2rem;
@@ -68,12 +97,22 @@
   margin: 0;
   display: -webkit-box;
   /*限制预览页title字段的行数*/
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 100;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .article-card:hover .card-title {
   color: #5eead4;
+}
+.card-content {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .card-desc {
   font-size: 0.875rem;
@@ -116,7 +155,6 @@
 .water-drop {
   overflow: hidden;
   position: absolute;
-  left: 15px;
   bottom: 15px;
   width: 100px;
   height: 100px;
@@ -129,6 +167,16 @@
   animation: waterIni 2s infinite alternate-reverse;
   z-index: 2;
   pointer-events: none;
+}
+/* 奇数：文字在右，水滴去右侧 */
+.article-card:nth-child(odd) .water-drop {
+  left: auto;
+  right: 15px;
+}
+/* 偶数：文字在左，水滴去左侧 */
+.article-card:nth-child(even) .water-drop {
+  left: 15px;
+  right: auto;
 }
 .water-drop::after {
   content: '';
@@ -161,8 +209,30 @@
   100% { width: 55px; height: 58px; }
 }
 
+/* ── 响应式：窄屏恢复垂直堆叠 ── */
 @media (max-width: 900px) {
-  .card-img-wrap { height: 180px; }
+  .article-card,
+  .article-card:nth-child(odd),
+  .article-card:nth-child(even) {
+    flex-direction: column;
+  }
+  .card-img-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: auto;
+    height: 180px;
+  }
+  /* 恢复底部渐变 */
+  .article-card:nth-child(odd) .card-img-wrap::after,
+  .article-card:nth-child(even) .card-img-wrap::after {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 64px;
+    background: linear-gradient(to bottom, transparent, rgba(30, 32, 38, 0.78));
+  }
   .card-body { padding: 14px 16px 16px; }
 }
 

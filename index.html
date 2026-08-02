@@ -9,6 +9,7 @@
 <title>Blog</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="components/card.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <link rel="stylesheet" href="css/avatar-rotate.css">
     <style>
   @font-face {
@@ -84,31 +85,31 @@
   <div id="tsparticles"></div>
 
   <header class="topbar" style="
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 52px; padding: 0 32px;
-    background: rgba(34,37,41,0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
+    position: fixed; top: 6px; left: 15px; right: 15px; z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
+    height: 48px; padding: 0 24px;
+    background: rgba(34,37,41,0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.08);
     font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   ">
-    <span style="font-weight:800;letter-spacing: 1px;text-shadow: 0 12px 5px #94c8ff;color:#eeeef2;font-size:35px;  font-family: 'Georgia', serif;">A Radish の Blog</span>
-    <nav style="display:flex;gap:24px;">
-      <a href="gobang.html" style="color:white;font-size:18px;font-weight:800;letter-spacing: 1px;text-shadow: 0 12px 5px #94c8fftransition:color 0.2s;white-space:nowrap;font-family:'Microsoft YaHei',sans-serif;" onmouseenter="this.style.color='#1a237e'" onmouseleave="this.style.color='white'">五子棋</a>
+    <span style="font-weight:800;letter-spacing:1px;color:#eeeef2;font-size:24px;font-family:'Georgia',serif;">A Radish の Blog</span>
+    <nav style="position:absolute;right:24px;display:flex;gap:24px;">
+      <a href="gobang.html" style="color:white;font-size:15px;font-weight:600;letter-spacing:1px;white-space:nowrap;font-family:'Microsoft YaHei',sans-serif;transition:color 0.2s;" onmouseenter="this.style.color='#5eead4'" onmouseleave="this.style.color='white'">五子棋</a>
     </nav>
   </header>
 
-  <div style="height:52px;"></div>
-
 <header class="header">
 
-  <canvas id="rain" style="position:absolute;top:0;left:0;z-index:10;pointer-events:none;"></canvas>
+  <canvas id="rain" style="position:absolute;top:20px;left:0;z-index:10;pointer-events:none;"></canvas>
 
   <span style="
     color: #eeeef2;
     position: absolute;
-    top: -140px;
+    top: -70px;
     left: -1080px;
     z-index: 5;
     font-size: 300px;
@@ -122,7 +123,7 @@
 
     <span id="typewriter" style="
     position: absolute;
-    top: 10px;
+    top: 70px;
     left: 570px;
     z-index: 3;
     font-weight: 400;
@@ -137,7 +138,7 @@
 
 
   <span style="  position: absolute;
-    top: 10px;
+    top: 70px;
     left: 570px;
     z-index: 3;
     font-weight: 400;
@@ -151,7 +152,7 @@
 
  <span style="
       position: absolute;
-      top: 60%;
+      top: 68%;
       left: 40px;
       transform: translateY(-50%);
       z-index: 3;
@@ -164,7 +165,7 @@
     filter:brightness(0.7);font-weight: 600;font-family:'Microsoft YaHei',sans-serif;">香芹<br>鼠尾草<br>迷迭香&百里香</span></span>
 
 <span style="  position: absolute;
-    top: 57%;
+    top: 65%;
     left: 55%;
     z-index: 3;
     font-weight: 600;
@@ -179,7 +180,7 @@
 
 
  <span style="  position: absolute;
-    top: 87%;
+    top: 95%;
     word-spacing: 4px;
     letter-spacing: 2px;
     left: auto;
@@ -202,8 +203,8 @@
 
     <span style="
       position: absolute;
-      top: 52%;
-      right: 40px;
+      top: 57%;
+      right: 32px;
       transform: translateY(-50%);
       z-index: 3;
       display: flex;
@@ -321,7 +322,7 @@
 
   </div><!-- .page1 结束 -->
 
-  <span id="busuanzi_value_page_pv" style="display:none;"></span>
+  <!--<span id="busuanzi_value_page_pv" style="display:none;"></span>-->
 
 
 
@@ -438,6 +439,18 @@
 <script src="js/card.js" defer></script>
 
 <script src="js/main.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderMathInElement(document.getElementById('article-list'), {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });
+});
+</script>
 
 <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
 <!--<script src="rain.js" defer></script>-->

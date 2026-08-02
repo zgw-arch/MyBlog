@@ -1614,8 +1614,9 @@ window.ARTICLES_DATA = [
 
 
 
-     {"id":16,"title":"NPN双极结型三极管（BJT）工作原理 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:13px;\">" +
-        "Working Principle of NPN Bipolar Junction Transistor (BJT)<\p>","date":"2025-06-15","category":"教程","tags":["BJT",""],"thumbnail":"img/16.webp",
+    {"id":16,"title":"NPN双极结型三极管（BJT）工作原理 <p  style=\"font-family:'MonsieurLaDoulaise',serif;font-size:13px;\">" +
+        "Working Principle of NPN Bipolar Junction Transistor (BJT)<\p>","date":"2025-06-15","category":"教程","tags":["BJT",""],
+       "thumbnail":"https://img.wjwj.top/2026/07/30/0cdfd5ca4429bdaf0f89c1050ba3630c.png\" alt=\"header\" border=\"0\"",
   "excerpt":"","content":"<h2>一、N区与P区的粒子分布</h2>"+
            "$$\n" +
            "\\begin{array}{|c|c|c|c|c|}\n" +

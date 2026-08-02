@@ -2,26 +2,23 @@
 
 .article-card {
   /*卡片宽度*/
-  max-width:800px;
+  max-width:900px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   position: relative;
-  background: rgba(30, 32, 38, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
+  background: #ffffff;
   border-radius: var(--radius-lg);
   margin-bottom: 24px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   transition: transform 0.25s, box-shadow 0.3s;
   cursor: pointer;
   text-decoration: none;
 }
 .article-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
 }
 
 /* ── 奇数篇：图片在左（默认 row）── */
@@ -55,7 +52,7 @@
   top: 0; bottom: 0;
   right: 0;
   width: 64px;
-  background: linear-gradient(to right, transparent, rgba(30, 32, 38, 0.78));
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.85));
   pointer-events: none;
 }
 /* 偶数：渐变在图片左侧 */
@@ -65,7 +62,7 @@
   top: 0; bottom: 0;
   left: 0;
   width: 64px;
-  background: linear-gradient(to left, transparent, rgba(30, 32, 38, 0.78));
+  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.85));
   pointer-events: none;
 }
 
@@ -91,7 +88,7 @@
 .card-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #1a1a2e;
   line-height: 1.5;
   letter-spacing: 0.01em;
   margin: 0;
@@ -102,11 +99,11 @@
   overflow: hidden;
 }
 .article-card:hover .card-title {
-  color: #5eead4;
+  color: #0d9488;
 }
 .card-content {
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  color: rgba(0,0,0,0.45);
   line-height: 1.7;
   margin: 0;
   display: -webkit-box;
@@ -116,7 +113,7 @@
 }
 .card-desc {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(0,0,0,0.55);
   line-height: 1.7;
   margin: 0;
   display: -webkit-box;
@@ -132,7 +129,7 @@
   font-size: 0.78rem;
 }
 .card-date {
-  color: rgba(255,255,255,0.35);
+  color: rgba(0,0,0,0.35);
   font-family: var(--font-mono);
 }
 .card-meta-right {
@@ -143,11 +140,11 @@
   border-radius: 9999px;
   font-size: 0.72rem;
   font-weight: 600;
-  background: rgba(120, 80, 40, 0.5);
-  color: #f0c060;
+  background: rgba(120, 80, 40, 0.12);
+  color: #b45309;
 }
 .card-read {
-  color: rgba(255,255,255,0.35);
+  color: rgba(0,0,0,0.35);
   font-size: 0.75rem;
 }
 
@@ -231,7 +228,7 @@
     right: 0;
     width: auto;
     height: 64px;
-    background: linear-gradient(to bottom, transparent, rgba(30, 32, 38, 0.78));
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85));
   }
   .card-body { padding: 14px 16px 16px; }
 }

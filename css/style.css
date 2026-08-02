@@ -29,14 +29,15 @@ body{background-color:var(--bg);color:var(--fg);font-family:var(--font);font-siz
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
-.page{max-width:100%;margin:10px auto;padding:10px 120px 10px 125px;padding-bottom:20px;min-height:60vh;position:relative;z-index:2;background:#fff}
+.page{max-width:100%;margin:10px auto;padding:10px 120px 10px 125px;padding-bottom:20px;min-height:60vh;position:relative;z-index:2;background:#F5FAFF}
 .page1{display:flex;gap:12px}
 
 /* ── Header ── */
-.header{height:100vh;min-height:360px;max-height:800px;overflow:hidden;position:sticky;top:52px;z-index:1;display:flex;align-items:center;justify-content:center}
+.header{height:65vh;min-height:360px;max-height:800px;overflow:hidden;position:sticky;top:52px;z-index:1;display:flex;align-items:center;justify-content:center}
 .header-content{position:relative;z-index:2}
 .header h1{font-family:'Georgia',serif;font-size:3rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
 .header-bg{position:absolute;inset:0;z-index:0}
+.header-bg img{width:100%;height:100%;object-fit:cover}
 /*header遮罩*/
 .header::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;backdrop-filter:blur(0.25px);-webkit-backdrop-filter:blur(0.25px);background:rgba(30,32,38,0.25)}
 
